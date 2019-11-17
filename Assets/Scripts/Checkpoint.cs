@@ -8,12 +8,17 @@ public class Checkpoint : MonoBehaviour
     bool triggered;
 
     Transform gameCamera;
+    Transform cameraTarget;
 
+    public bool FarToCenter;
     Transform pointToLook; // where the camera has to focus on in the new area
+    public Vector3 newOffsetFromFocusPoint = new Vector3(15,0,10);
 
     void Start () {
         gameCamera = GameObject.FindGameObjectWithTag("MainCamera").transform;
-        pointToLook = transform.Find("Center");
+        cameraTarget = GameObject.Find("CameraTarget").transform;
+        if (FarToCenter) pointToLook = transform.Find("Center");
+        else pointToLook = GameObject.FindGameObjectWithTag("Player").transform;
     }
     void Awake()
     {
@@ -41,9 +46,11 @@ public class Checkpoint : MonoBehaviour
     {
         // Tell the animation controller about our 
         // recent triggering
-        triggered = true;
-        Debug.Log("HI");
-        gameCamera.GetComponent<CameraMove>().target = pointToLook;
+        //triggered = true;
+
+        //gameCamera.GetComponent<CameraMove>().target = pointToLook;
+        cameraTarget.GetComponent<CameraTarget>().offsetFromFocusPoint = newOffsetFromFocusPoint;
+
 
     }
 }
