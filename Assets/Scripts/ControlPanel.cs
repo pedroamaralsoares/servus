@@ -48,15 +48,23 @@ public class ControlPanel : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter (Collider collider) {
+        Trigger(collider);
+    }
     void OnTriggerStay(Collider collider)
     {
-        if (collider.gameObject.tag == "Player")
+       Trigger(collider);
+    }
+
+    void Trigger (Collider collider) {
+         if (collider.gameObject.tag == "Player")
         {
             if (Input.GetKeyDown("q") && sceneryManager != null) {
                 if (!playing) {
-                sceneryManager.PlayAudio(clip);
-                playing = true;
-                panelUsed = true;
+                    sceneryManager.PlayAudio(clip);
+                    playing = true;
+                    panelUsed = true;
+                    Debug.Log("HI");
                 }
                 else {
                     sceneryManager.StopAudio();

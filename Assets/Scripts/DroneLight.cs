@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 public class DroneLight : MonoBehaviour
 {
     Transform player;
@@ -16,7 +18,7 @@ public class DroneLight : MonoBehaviour
     void Update()
     {
         if (tracking) {
-            transform.LookAt(player);
+            SmoothLookAt(player);
         }
 
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
@@ -24,7 +26,16 @@ public class DroneLight : MonoBehaviour
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(transform.position,fwd, out hit, 100f))
-            if (hit.collider != null && hit.collider.tag == "Player")
-                Debug.Log("DIE");
+            if (hit.collider != null && hit.collider.tag == "Player") {
+                SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+                //Debug.Log("DIE");
+            }
+                
+    }
+
+
+    void SmoothLookAt (Transform target) {
+        Vector3 lTargetDir = target.position - transform.position;
+         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(lTargetDir), Time.time * 1.5f);
     }
 }
