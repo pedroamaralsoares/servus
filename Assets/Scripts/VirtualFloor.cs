@@ -5,7 +5,7 @@ using UnityEngine;
 public class VirtualFloor : MonoBehaviour
 {
     bool triggered;
-    Vector3 latestPlayerPos;
+    public Vector3 latestPlayerPos;
     float timeToRest = 0.5f; // time to rest since last sound emmited (3 sec for each sample)
     public Transform soundSamplePrefab;
 
