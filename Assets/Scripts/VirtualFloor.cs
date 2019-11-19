@@ -12,6 +12,8 @@ public class VirtualFloor : MonoBehaviour
     public AudioClip[] clips;
     private int numClips;
 
+    public bool tracking;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,9 @@ public class VirtualFloor : MonoBehaviour
 
     void OnTriggerEnter (Collider collider) {
 
+        if (ControlPanel.playing) return;   // quando ta a chover
+
+        tracking = true;
         latestPlayerPos = collider.transform.position;
 
         if (collider.gameObject.tag == "Player")
@@ -44,11 +49,21 @@ public class VirtualFloor : MonoBehaviour
     }
     void OnTriggerStay(Collider collider)
     {
+        //if (ControlPanel.playing) return;   // quando ta a chover
+        
         if (collider.gameObject.tag == "Player")
         {
+            if (ControlPanel.playing) {
+                latestPlayerPos = collider.transform.position;
+                tracking = false; return;   // quando ta a chover
+            }
+
             if (latestPlayerPos == collider.transform.position) return;
+
+            tracking = true;
             latestPlayerPos = collider.transform.position;
             //Debug.Log(latestPlayerPos);
+            
 
             if (timeToRest >= 0.5f) {
                 Transform newSoundObject = Instantiate(soundSamplePrefab, latestPlayerPos, collider.transform.rotation);

@@ -418,6 +418,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e4f57de1f911c9d4da654a8198ec238b, type: 3}
   - {fileID: 8300000, guid: 3035abd860ad7e14fb1b245427dfab1c, type: 3}
   - {fileID: 8300000, guid: 8b77210a612bc0949a7debf85af25c2c, type: 3}
+  tracking: 0
 --- !u!1 &273613193
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,7 +2030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 396013f453005954ca635d06871f7115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftWaypoint: {x: 0, y: 8.33, z: 18.4}
+  leftWaypoint: {x: 22, y: 8.33, z: 18.4}
   rightWaypoint: {x: 15, y: 8.33, z: 35.7}
   sceneryManager: {fileID: 0}
   virtualFloor: {fileID: 189421236}

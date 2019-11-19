@@ -12,9 +12,12 @@ public class DroneControl : MonoBehaviour
     public VirtualFloor virtualFloor;
 
     public Vector3 targetWaypoint;
+
+    public DroneLight droneLight;
     void Start()
     {
         targetWaypoint = leftWaypoint;
+        droneLight = transform.Find("DroneLight").GetComponent<DroneLight>();
     }
 
     // Update is called once per frame
@@ -22,6 +25,20 @@ public class DroneControl : MonoBehaviour
     {
         transform.position = Vector3.Lerp(transform.position, new Vector3(targetWaypoint.x, transform.position.y, transform.position.z), 1 * Time.deltaTime);
 
-        targetWaypoint = virtualFloor.latestPlayerPos;
+        if (virtualFloor.tracking) {
+            targetWaypoint = virtualFloor.latestPlayerPos;
+
+            if (Mathf.Abs(transform.position.x-targetWaypoint.x) < 5) {
+                droneLight.tracking = true;
+            }
+            else {
+                droneLight.tracking = false;
+            }
+        }
+        else {
+            droneLight.tracking = false;
+        }
+
+
     }
 }

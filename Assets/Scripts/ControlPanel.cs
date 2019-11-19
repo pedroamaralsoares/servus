@@ -12,7 +12,7 @@ public class ControlPanel : MonoBehaviour
 
     private bool panelUsed;
 
-    static bool playing;
+    public static bool playing;
     static float panelsTime;
     static bool locked;
     public Material runMaterial;
@@ -31,7 +31,7 @@ public class ControlPanel : MonoBehaviour
         if (playing) {
             if (panelUsed) panelsTime += Time.deltaTime;
             meshRenderer.material = runMaterial;
-            Debug.Log(panelsTime);
+
             if (panelsTime > timeLimit) {
                 playing = false;
                 locked = true;
