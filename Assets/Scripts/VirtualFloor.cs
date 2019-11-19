@@ -40,7 +40,6 @@ public class VirtualFloor : MonoBehaviour
             newSoundObject.GetComponent<AudioSource>().clip = randomClip();
             newSoundObject.GetComponent<AudioSource>().Play();
             timeToRest = 0f;
-            Debug.Log("HI");
         }
     }
     void OnTriggerStay(Collider collider)
