@@ -107,9 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12deecbd02924541b9047095f590d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 1
-  cover: 0
-  raining: 0
   umbrellaPrefab: {fileID: 16533895413443342, guid: 0a0276750245b1248b02f1d27860f751,
     type: 3}
 --- !u!54 &1533366632105196610
@@ -157,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14622998582899155}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.62, y: 0, z: 1.7}
+  m_LocalPosition: {x: 5.02, y: 0, z: 1.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 14622998963190805}
@@ -235,9 +232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12deecbd02924541b9047095f590d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 1
-  cover: 0
-  raining: 0
   umbrellaPrefab: {fileID: 16533895413443342, guid: 0a0276750245b1248b02f1d27860f751,
     type: 3}
 --- !u!54 &5073773152849564639
@@ -285,7 +279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14622998916111368}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.99, y: 0, z: 1.7}
+  m_LocalPosition: {x: 6.88, y: 0, z: 1.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 14622998963190805}
@@ -363,9 +357,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12deecbd02924541b9047095f590d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 1
-  cover: 0
-  raining: 0
   umbrellaPrefab: {fileID: 16533895413443342, guid: 0a0276750245b1248b02f1d27860f751,
     type: 3}
 --- !u!54 &9007101250209856957
@@ -447,7 +438,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7098010181778614180}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.84, y: 0, z: 1.7}
+  m_LocalPosition: {x: 1.4, y: 0, z: 1.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 14622998963190805}
@@ -525,9 +516,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12deecbd02924541b9047095f590d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 1
-  cover: 0
-  raining: 0
   umbrellaPrefab: {fileID: 16533895413443342, guid: 0a0276750245b1248b02f1d27860f751,
     type: 3}
 --- !u!54 &1238323831214053195

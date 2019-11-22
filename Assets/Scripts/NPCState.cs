@@ -116,6 +116,11 @@ public class NPCState : MonoBehaviour
         {
             umbrellaInstance = Instantiate(umbrellaPrefab, this.transform);
             cover = State.Raining;
+
+            if (state == State.Walking)
+            {
+                speed += 3;
+            }
         }
 
         Debug.Log(cover);
@@ -123,6 +128,11 @@ public class NPCState : MonoBehaviour
         {
             cover = State.Clear;
             Destroy(umbrellaInstance);
+
+            if (state == State.Walking)
+            {
+                speed -= 3;
+            }
         }
     }
 }
