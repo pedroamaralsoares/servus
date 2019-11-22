@@ -26,15 +26,21 @@ public class NPCState : MonoBehaviour
         drones = GameObject.FindGameObjectsWithTag("Drone");
     }
 
-    public void TriggerStateAlert()
+    public IEnumerator TriggerStateAlert()
     {
+        Debug.Log("1");
+        yield return new WaitForSeconds (1f);
+        Debug.Log("2");
         if (state == State.Normal)
         {
             state = State.Alert;
             alertTimer = 5.0f;
 
             GameObject closestDrone = FindClosestDrone();
-            closestDrone.GetComponent<DroneNavAgent>().tracking = true;
+            if (closestDrone != null) {
+                closestDrone.GetComponent<DroneNavAgent>().tracking = true;
+            }
+            
         }
     }
 

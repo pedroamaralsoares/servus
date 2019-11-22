@@ -17,7 +17,7 @@ public class DroneLight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (tracking) {
+        if (tracking && player != null) {
             SmoothLookAt(player);
         }
 

@@ -7,7 +7,7 @@ public class NPCAttention : MonoBehaviour
         if (other.gameObject.CompareTag("NPC"))
         {
             Debug.Log("Sound detected");
-            other.gameObject.GetComponent<NPCState>().TriggerStateAlert();
+            StartCoroutine(other.gameObject.GetComponent<NPCState>().TriggerStateAlert());
         }
     }
 }
