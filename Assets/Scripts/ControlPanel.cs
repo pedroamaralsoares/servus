@@ -64,7 +64,6 @@ public class ControlPanel : MonoBehaviour
                     sceneryManager.PlayAudio(clip);
                     playing = true;
                     panelUsed = true;
-                    Debug.Log("HI");
                 }
                 else {
                     sceneryManager.StopAudio();

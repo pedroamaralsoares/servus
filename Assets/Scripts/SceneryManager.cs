@@ -21,7 +21,6 @@ public class SceneryManager : MonoBehaviour
 
     public void PlayAudio (AudioClip newClip) {
         clip = newClip;
-        Debug.Log(clip);
         source.clip = clip;
         source.Play();
     }
