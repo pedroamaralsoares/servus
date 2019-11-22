@@ -2147,10 +2147,11 @@ GameObject:
   - component: {fileID: 1384118432}
   - component: {fileID: 1384118431}
   - component: {fileID: 1384118430}
+  - component: {fileID: 1384118435}
   - component: {fileID: 1384118434}
   m_Layer: 0
   m_Name: Drone
-  m_TagString: Untagged
+  m_TagString: Drone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2236,7 +2237,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384118429}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 396013f453005954ca635d06871f7115, type: 3}
   m_Name: 
@@ -2246,6 +2247,27 @@ MonoBehaviour:
   sceneryManager: {fileID: 0}
   virtualFloor: {fileID: 189421236}
   targetWaypoint: {x: 0, y: 0, z: 0}
+  tracking: 0
+  droneLight: {fileID: 0}
+--- !u!114 &1384118435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384118429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a550d2530963c1c4b8ec3dfa7869b9d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 0}
+  leftWaypoint: {x: 0, y: 0, z: 0}
+  rightWaypoint: {x: 0, y: 0, z: 0}
+  sceneryManager: {fileID: 0}
+  virtualFloor: {fileID: 189421236}
+  targetWaypoint: {x: 0, y: 0, z: 0}
+  tracking: 0
   droneLight: {fileID: 0}
 --- !u!1 &1392735362
 GameObject:

@@ -224,13 +224,13 @@ GameObject:
   - component: {fileID: 157472167}
   - component: {fileID: 157472166}
   - component: {fileID: 157472165}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &157472164
 Transform:
   m_ObjectHideFlags: 0
@@ -265,7 +265,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157472163}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1942,7 +1942,7 @@ GameObject:
   - component: {fileID: 1267571898}
   - component: {fileID: 1267571903}
   - component: {fileID: 1267571904}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ControlPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2169,7 +2169,7 @@ GameObject:
   - component: {fileID: 1336183674}
   - component: {fileID: 1336183673}
   - component: {fileID: 1336183672}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: NavMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2185,7 +2185,7 @@ BoxCollider:
   m_GameObject: {fileID: 1336183671}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -2367,6 +2367,7 @@ MonoBehaviour:
   sceneryManager: {fileID: 0}
   virtualFloor: {fileID: 189421236}
   targetWaypoint: {x: 0, y: 0, z: 0}
+  tracking: 0
   droneLight: {fileID: 0}
 --- !u!195 &1384118435
 NavMeshAgent:
@@ -2378,7 +2379,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 10
   m_Acceleration: 15
   avoidancePriority: 50
   m_AngularSpeed: 120

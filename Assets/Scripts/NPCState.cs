@@ -34,7 +34,7 @@ public class NPCState : MonoBehaviour
             alertTimer = 5.0f;
 
             GameObject closestDrone = FindClosestDrone();
-            closestDrone.GetComponent<DroneControl>().tracking = true;
+            closestDrone.GetComponent<DroneNavAgent>().tracking = true;
         }
     }
 

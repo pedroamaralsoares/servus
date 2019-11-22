@@ -25,10 +25,11 @@ public class DroneLight : MonoBehaviour
 
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawRay(transform.position,fwd*15, Color.green,2);
         if (Physics.Raycast(transform.position,fwd, out hit, 100f))
             if (hit.collider != null && hit.collider.tag == "Player") {
                 SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-                //Debug.Log("DIE");
+                Debug.Log("DIE");
             }
                 
     }

@@ -13,22 +13,23 @@ public class DroneNavAgent : MonoBehaviour
     public VirtualFloor virtualFloor;
 
     public Vector3 targetWaypoint;
+    public bool tracking;
+
 
     public DroneLight droneLight;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        tracking = false;
         targetWaypoint = transform.position;
         droneLight = transform.Find("DroneLight").GetComponent<DroneLight>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         agent.SetDestination(targetWaypoint);
-        //transform.position = Vector3.Lerp(transform.position, new Vector3(targetWaypoint.x, transform.position.y, transform.position.z), 1 * Time.deltaTime);
 
-        if (virtualFloor.tracking) {
+        if (tracking) {
             targetWaypoint = new Vector3(virtualFloor.latestPlayerPos.x, transform.position.y, virtualFloor.latestPlayerPos.z);
 
             if (Mathf.Abs(transform.position.x-targetWaypoint.x) < 5) {
