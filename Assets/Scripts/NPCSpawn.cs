@@ -21,7 +21,6 @@ public class NPCSpawn : MonoBehaviour
     {
         if (npcInstance != null) Destroy(npcInstance);
         npcInstance = Instantiate(NPCprefab, StartPosition.position, StartPosition.rotation);
-
     }
 }
 

@@ -7,30 +7,43 @@ public class NPCState : MonoBehaviour
     public enum State
     {
         Alert,
-        Normal
+        Normal,
+        Walking,
+        Raining,
+        Clear
     }
 
-    public State state;
+    private State state = State.Normal;
+    private State cover = State.Clear;
 
     private GameObject[] drones;
+    public GameObject umbrellaPrefab;
+    private GameObject umbrellaInstance;
 
-    private float jumpTimer = 2.0f;
     private Rigidbody rb;
+    private float jumpTimer = 2.0f;
     private float jumpForce = 100.0f;
     private float alertTimer = 5.0f;
 
+    private Transform waypoint;
+    private float wayRadius = 1.0f;
+    private float speed = 5.0f;
+
     private void Start()
     {
+        waypoint = GameObject.Find("Waypoint").transform;
         rb = this.gameObject.GetComponent<Rigidbody>();
-        state = State.Normal;
         drones = GameObject.FindGameObjectsWithTag("Drone");
+    }
+
+    public void StartWalking()
+    {
+        state = State.Walking;
     }
 
     public IEnumerator TriggerStateAlert()
     {
-        Debug.Log("1");
         yield return new WaitForSeconds (1f);
-        Debug.Log("2");
         if (state == State.Normal)
         {
             state = State.Alert;
@@ -84,11 +97,32 @@ public class NPCState : MonoBehaviour
 
                 break;
 
+            case State.Walking:
+                if (Vector3.Distance(waypoint.position, this.transform.position) < wayRadius)
+                {
+                    Destroy(this.gameObject);
+                }
+                this.transform.position = Vector3.MoveTowards(this.transform.position, this.waypoint.position, Time.deltaTime * this.speed);
+                break;
+
             case State.Normal:
                 break;
 
             default:
                 break;
+        }
+
+        if (cover == State.Clear && ControlPanel.playing)
+        {
+            umbrellaInstance = Instantiate(umbrellaPrefab, this.transform);
+            cover = State.Raining;
+        }
+
+        Debug.Log(cover);
+        if (cover == State.Raining && !ControlPanel.playing)
+        {
+            cover = State.Clear;
+            Destroy(umbrellaInstance);
         }
     }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 732928525428486254}
   - component: {fileID: 9110656957208906868}
   m_Layer: 0
-  m_Name: NPC
+  m_Name: NPC-Seated
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,3 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12deecbd02924541b9047095f590d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  raining: 0
+  umbrellaPrefab: {fileID: 16533895413443342, guid: 0a0276750245b1248b02f1d27860f751,
+    type: 3}
