@@ -36,11 +36,10 @@ public class VirtualFloor : MonoBehaviour
 
         if (ControlPanel.playing) return;   // quando ta a chover
 
-        tracking = true;
-        latestPlayerPos = collider.transform.position;
-
         if (collider.gameObject.tag == "Player")
         {
+            tracking = true;
+            latestPlayerPos = collider.transform.position;
             Transform newSoundObject = Instantiate(soundSamplePrefab, latestPlayerPos, collider.transform.rotation);
             newSoundObject.GetComponent<AudioSource>().clip = randomClip();
             newSoundObject.GetComponent<AudioSource>().Play();
