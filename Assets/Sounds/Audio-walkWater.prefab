@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5991129708321276530}
   - component: {fileID: -3910782236786367349}
   - component: {fileID: 1101371506657511791}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Audio-walkWater
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -36,7 +36,7 @@ public class DroneNavAgent : MonoBehaviour
                 droneLight.tracking = true;
             }
             else {
-                droneLight.tracking = false;
+                //droneLight.tracking = false;
             }
         }
         else {

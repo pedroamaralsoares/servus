@@ -123,7 +123,7 @@ public class NPCState : MonoBehaviour
             }
         }
 
-        Debug.Log(cover);
+        //Debug.Log(cover);
         if (cover == State.Raining && !ControlPanel.playing)
         {
             cover = State.Clear;
