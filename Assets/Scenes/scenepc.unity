@@ -752,7 +752,6 @@ MonoBehaviour:
   timeLimit: 5
   runMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   blockedMaterial: {fileID: 2100000, guid: e123cf33571cf5e479cb8e65045daac3, type: 2}
-  Umbrella: {fileID: 0}
 --- !u!122 &442519756
 Halo:
   m_ObjectHideFlags: 0
@@ -2053,7 +2052,6 @@ MonoBehaviour:
   timeLimit: 5
   runMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   blockedMaterial: {fileID: 2100000, guid: e123cf33571cf5e479cb8e65045daac3, type: 2}
-  Umbrella: {fileID: 16533895413443342, guid: 0a0276750245b1248b02f1d27860f751, type: 3}
 --- !u!65 &1267571904
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3109,6 +3107,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9110656957208906868, guid: 19d347823916fef4fa52b8c82ec1afc9,
+        type: 3}
+      propertyPath: umbrella
+      value: 
+      objectReference: {fileID: 16533895413443342, guid: 0a0276750245b1248b02f1d27860f751,
+        type: 3}
+    - target: {fileID: 9110656957208906868, guid: 19d347823916fef4fa52b8c82ec1afc9,
+        type: 3}
+      propertyPath: umbrellaPrefab
+      value: 
+      objectReference: {fileID: 16533895413443342, guid: 0a0276750245b1248b02f1d27860f751,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19d347823916fef4fa52b8c82ec1afc9, type: 3}
 --- !u!1 &1996739056

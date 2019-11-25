@@ -12,11 +12,12 @@ public class ControlPanel : MonoBehaviour
 
     private bool panelUsed;
 
-    public static bool playing;
-    static float panelsTime;
-    static bool locked;
+    public bool playing;
+    private float panelsTime;
+    private bool locked;
     public Material runMaterial;
     public Material blockedMaterial;
+    public Material startMaterial;
 
     private MeshRenderer meshRenderer;
 
@@ -25,6 +26,9 @@ public class ControlPanel : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         panelsTime = 0;
         meshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer.material = startMaterial;
+        playing = false;
+        locked = false;
     }
 
     void Update () {
@@ -44,7 +48,7 @@ public class ControlPanel : MonoBehaviour
         }
 
         else {
-            //meshRenderer.material = normalMaterial;
+            meshRenderer.material = startMaterial;
         }
     }
 
@@ -53,7 +57,7 @@ public class ControlPanel : MonoBehaviour
     }
     void OnTriggerStay(Collider collider)
     {
-       Trigger(collider);
+        Trigger(collider);
     }
 
     void Trigger (Collider collider) {
@@ -65,10 +69,10 @@ public class ControlPanel : MonoBehaviour
                     playing = true;
                     panelUsed = true;
                 }
-                else {
-                    sceneryManager.StopAudio();
-                    playing = false;
-                }
+                //else {
+                //    sceneryManager.StopAudio();
+                //    playing = false;
+                //}
             }
         }
     }

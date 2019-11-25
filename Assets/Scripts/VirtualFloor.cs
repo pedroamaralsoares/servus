@@ -9,6 +9,8 @@ public class VirtualFloor : MonoBehaviour
     float timeToRest = 0.5f; // time to rest since last sound emmited (3 sec for each sample)
     public Transform soundSamplePrefab;
 
+    private ControlPanel panel;
+
     public AudioClip[] clips;
     private int numClips;
 
@@ -19,6 +21,7 @@ public class VirtualFloor : MonoBehaviour
     {
         latestPlayerPos = new Vector3(0,0,0);
         numClips = clips.Length;
+        panel = GameObject.Find("ControlPanel").GetComponent<ControlPanel>();
     }
 
     // Update is called once per frame
@@ -34,7 +37,7 @@ public class VirtualFloor : MonoBehaviour
 
     void OnTriggerEnter (Collider collider) {
 
-        if (ControlPanel.playing) return;   // quando ta a chover
+        if (panel.playing) return;   // quando ta a chover
 
         if (collider.gameObject.tag == "Player")
         {
@@ -52,7 +55,7 @@ public class VirtualFloor : MonoBehaviour
         
         if (collider.gameObject.tag == "Player")
         {
-            if (ControlPanel.playing) {
+            if (panel.playing) {
                 latestPlayerPos = collider.transform.position;
                 tracking = false; return;   // quando ta a chover
             }
