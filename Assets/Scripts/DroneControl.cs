@@ -4,14 +4,26 @@ using UnityEngine;
 
 public class DroneControl : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public enum State
+    {
+        Sleeping,
+        PlayerTargeting,
+        NPCTargeting
+    }
+    private State state = State.Sleeping;
+
+
     public Vector3 leftWaypoint;
     public Vector3 rightWaypoint;
 
     public SceneryManager sceneryManager;
     public VirtualFloor virtualFloor;
 
+    public Transform target;
     public Vector3 targetWaypoint;
+
+    public List <Transform> uncheckedNPCs;
 
     public bool tracking;
 
@@ -23,17 +35,47 @@ public class DroneControl : MonoBehaviour
         droneLight = transform.Find("DroneLight").GetComponent<DroneLight>();
     }
 
-    // Update is called once per frame
+
+
+    public IEnumerator CheckNPC()
+    {
+        // play animation of light
+        yield return new WaitForSeconds (1f);
+        // check!
+        uncheckedNPCs.Remove(target);
+
+        
+    }
+
     void Update()
     {
+        if (uncheckedNPCs.Count > 0) {
+            state = State.NPCTargeting;
+            tracking = true;
+        }
+        else {
+            state = State.PlayerTargeting;
+        }
+
+
+
+        
+        targetWaypoint = target.position;
+
         transform.position = Vector3.Lerp(transform.position, new Vector3(targetWaypoint.x, transform.position.y, transform.position.z), 1 * Time.deltaTime);
 
         if (tracking) {
             targetWaypoint = virtualFloor.latestPlayerPos;
 
-            if (Mathf.Abs(transform.position.x-targetWaypoint.x) < 5) {
-                droneLight.tracking = true;
+            if (state == State.PlayerTargeting && Mathf.Abs(transform.position.x-targetWaypoint.x) < 5
+            ||  state == State.NPCTargeting && Vector3.Distance(transform.position, targetWaypoint) < 5) {
+                
+                if (Mathf.Abs(transform.position.x-targetWaypoint.x) < 5) {
+                    droneLight.tracking = true;
+                    CheckNPC();
+                }
             }
+            
             else {
                 droneLight.tracking = false;
             }

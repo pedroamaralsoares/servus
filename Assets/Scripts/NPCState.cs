@@ -43,6 +43,9 @@ public class NPCState : MonoBehaviour
     public void StartWalking()
     {
         state = State.Walking;
+        
+        // i have to trigger the drone, so he can check me
+        FindClosestDrone().GetComponent<DroneControl>().uncheckedNPCs.Add(transform); 
     }
 
     public IEnumerator TriggerStateAlert()

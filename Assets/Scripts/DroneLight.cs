@@ -8,10 +8,12 @@ public class DroneLight : MonoBehaviour
 {
     Transform player;
     public bool tracking;
-    // Start is called before the first frame update
+
+    private DroneControl droneControl;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        droneControl = transform.parent.GetComponent<DroneControl>();
     }
 
     // Update is called once per frame
