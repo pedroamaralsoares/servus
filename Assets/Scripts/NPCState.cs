@@ -18,6 +18,7 @@ public class NPCState : MonoBehaviour
 
     private GameObject[] drones;
     public GameObject umbrellaPrefab;
+    public VirtualFloor virtualFloor;
     private GameObject umbrellaInstance;
     private MeshRenderer led;
     private ControlPanel panel;
@@ -25,7 +26,7 @@ public class NPCState : MonoBehaviour
     private Rigidbody rb;
     private float jumpTimer = 1.0f;
     private float jumpForce = 100.0f;
-    private float alertTimer = 5.0f;
+    private float alertTimer = 3.0f;
 
     private Transform waypoint;
     private float wayRadius = 1.0f;
@@ -38,14 +39,21 @@ public class NPCState : MonoBehaviour
         drones = GameObject.FindGameObjectsWithTag("Drone");
         led = this.transform.GetChild(0).GetComponent<MeshRenderer>();
         panel = GameObject.Find("ControlPanel").GetComponent<ControlPanel>();
+        virtualFloor = GameObject.Find("Floor-wet").GetComponent<VirtualFloor>();
     }
 
     public void StartWalking()
     {
         state = State.Walking;
-        
+
         // i have to trigger the drone, so he can check me
-        FindClosestDrone().GetComponent<DroneControl>().uncheckedNPCs.Add(transform); 
+
+        GameObject closestDrone = FindClosestDrone();
+        if (closestDrone != null)
+        {
+            closestDrone.GetComponent<DroneNavAgent>().tracking = true;
+            closestDrone.GetComponent<DroneNavAgent>().prios.Insert(this.transform, 2);
+        }  
     }
 
     public IEnumerator TriggerStateAlert()
@@ -54,11 +62,11 @@ public class NPCState : MonoBehaviour
         if (state == State.Normal)
         {
             state = State.Alert;
-            alertTimer = 5.0f;
 
             GameObject closestDrone = FindClosestDrone();
             if (closestDrone != null) {
                 closestDrone.GetComponent<DroneNavAgent>().tracking = true;
+                closestDrone.GetComponent<DroneNavAgent>().prios.Insert(GameObject.FindGameObjectWithTag("Player").transform, 1);
             }
 
             led.material.color = Color.yellow;
@@ -94,6 +102,14 @@ public class NPCState : MonoBehaviour
                 {
                     state = State.Normal;
                     led.material.color = Color.green;
+                    GameObject closestDrone = FindClosestDrone();
+
+                    if (closestDrone != null)
+                    {
+                        closestDrone.GetComponent<DroneNavAgent>().prios.Pop();
+                    }
+
+                    alertTimer = 7.0f;
                     return;
                 }
 
@@ -109,6 +125,11 @@ public class NPCState : MonoBehaviour
             case State.Walking:
                 if (Vector3.Distance(waypoint.position, this.transform.position) < wayRadius)
                 {
+                    GameObject closestDrone = FindClosestDrone();
+                    if (closestDrone != null)
+                    {
+                        closestDrone.GetComponent<DroneNavAgent>().prios.Pop();
+                    }
                     Destroy(this.gameObject);
                 }
                 this.transform.position = Vector3.MoveTowards(this.transform.position, this.waypoint.position, Time.deltaTime * this.speed);

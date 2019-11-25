@@ -13,6 +13,7 @@ public class DroneControl : MonoBehaviour
     }
     private State state = State.Sleeping;
 
+    public PriorityQueue<Transform, int> prios;
 
     public Vector3 leftWaypoint;
     public Vector3 rightWaypoint;
@@ -33,18 +34,15 @@ public class DroneControl : MonoBehaviour
         tracking = false;
         targetWaypoint = leftWaypoint;
         droneLight = transform.Find("DroneLight").GetComponent<DroneLight>();
+        prios = new PriorityQueue<Transform, int>(0);
     }
-
-
 
     public IEnumerator CheckNPC()
     {
         // play animation of light
         yield return new WaitForSeconds (1f);
         // check!
-        uncheckedNPCs.Remove(target);
-
-        
+        prios.Pop(); 
     }
 
     void Update()
@@ -56,9 +54,6 @@ public class DroneControl : MonoBehaviour
         else {
             state = State.PlayerTargeting;
         }
-
-
-
         
         targetWaypoint = target.position;
 
@@ -67,14 +62,14 @@ public class DroneControl : MonoBehaviour
         if (tracking) {
             targetWaypoint = virtualFloor.latestPlayerPos;
 
-            if (state == State.PlayerTargeting && Mathf.Abs(transform.position.x-targetWaypoint.x) < 5
-            ||  state == State.NPCTargeting && Vector3.Distance(transform.position, targetWaypoint) < 5) {
+            if (state == State.PlayerTargeting && Mathf.Abs(transform.position.x-targetWaypoint.x) < 5)
+                if (state == State.NPCTargeting && Vector3.Distance(transform.position, targetWaypoint) < 5) {
                 
-                if (Mathf.Abs(transform.position.x-targetWaypoint.x) < 5) {
-                    droneLight.tracking = true;
-                    CheckNPC();
+                    if (Mathf.Abs(transform.position.x-targetWaypoint.x) < 5) {
+                        droneLight.tracking = true;
+                        CheckNPC();
+                    }
                 }
-            }
             
             else {
                 droneLight.tracking = false;

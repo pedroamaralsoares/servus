@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public class ControlPanel : MonoBehaviour
     public AudioClip clip;
     public float timeLimit = 3f;
 
-    private bool panelUsed;
+    public bool panelUsed;
 
     public bool playing;
     private float panelsTime;
@@ -21,9 +22,12 @@ public class ControlPanel : MonoBehaviour
 
     private MeshRenderer meshRenderer;
 
+    private ControlPanel[] panels;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        panels = GameObject.FindGameObjectsWithTag("ControlPanel").Select(j => j.GetComponent<ControlPanel>()).ToArray();
         panelsTime = 0;
         meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.material = startMaterial;
@@ -34,9 +38,11 @@ public class ControlPanel : MonoBehaviour
     void Update () {
         if (playing) {
             if (panelUsed) panelsTime += Time.deltaTime;
+
             meshRenderer.material = runMaterial;
 
-            if (panelsTime > timeLimit) {
+            if (panelsTime > timeLimit)
+            {
                 playing = false;
                 locked = true;
             }
@@ -64,10 +70,14 @@ public class ControlPanel : MonoBehaviour
          if (collider.gameObject.tag == "Player")
         {
             if (Input.GetKeyDown("q") && sceneryManager != null) {
-                if (!playing) {
+                if (!playing && panelsTime <= timeLimit) {
                     sceneryManager.PlayAudio(clip);
-                    playing = true;
-                    panelUsed = true;
+
+                    foreach (ControlPanel cp in panels)
+                    {
+                        cp.playing = true;
+                        cp.panelUsed = true;
+                    }
                 }
                 //else {
                 //    sceneryManager.StopAudio();

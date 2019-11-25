@@ -13,7 +13,7 @@ public class NPCSpawn : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            InvokeRepeating("NPCSpawner", 3.0f, 20.0f);
+            InvokeRepeating("NPCSpawner", 0.0f, 15.0f);
         }
     }
 
