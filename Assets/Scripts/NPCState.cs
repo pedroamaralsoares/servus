@@ -26,7 +26,7 @@ public class NPCState : MonoBehaviour
     private Rigidbody rb;
     private float jumpTimer = 0f;
     private float jumpForce = 100.0f;
-    private float alertTimer = 7.0f;
+    private float alertTimer = 5.0f;
 
     private Transform waypoint;
     private float wayRadius = 1.0f;

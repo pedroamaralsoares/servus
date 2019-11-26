@@ -85,10 +85,15 @@ public class DroneNavAgent : MonoBehaviour
                 droneLight.tracking = false;
                 agent.speed = movementSpeed * 3.2f;
             }
+            else if (Vector3.Distance(transform.position, targetWaypoint) < 30)
+            {
+                droneLight.tracking = false;
+                agent.speed = movementSpeed * 6f;
+            }
             else
             {
                 droneLight.tracking = false;
-                agent.speed = movementSpeed * 8f;
+                agent.speed = movementSpeed * 10f;
             }
         }
         else

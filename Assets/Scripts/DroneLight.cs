@@ -38,6 +38,13 @@ public class DroneLight : MonoBehaviour
         if (tracking && target != null) {
             SmoothLookAt(target);
         }
+        
+        if (transform.parent.GetComponent<DroneNavAgent>().tracking) {
+            GetComponent<Light>().intensity = 13.5f;
+        }
+        else {
+            GetComponent<Light>().intensity = 0;
+        }
 
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
