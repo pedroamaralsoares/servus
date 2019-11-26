@@ -18,7 +18,8 @@ public class DroneNavAgent : MonoBehaviour
 
     public PriorityQueue<Transform, int> prios;
 
-    public NavMeshAgent agent;
+    private NavMeshAgent agent;
+    public float movementSpeed = 5;
     public Vector3 leftWaypoint;
     public Vector3 rightWaypoint;
 
@@ -40,6 +41,8 @@ public class DroneNavAgent : MonoBehaviour
         targetWaypoint = transform.position;
         initialPosition = transform.position;
         droneLight = transform.Find("DroneLight").GetComponent<DroneLight>();
+
+        movementSpeed = 5;
     }
 
     void Update()
@@ -73,10 +76,19 @@ public class DroneNavAgent : MonoBehaviour
                 //{
                 //    droneLight.trackingNPC = false;
                 //}
+
+                //agent.speed = movementSpeed * 2;
+                agent.speed = movementSpeed * 0.8f;
+            }
+            else if (Vector3.Distance(transform.position, targetWaypoint) < 16)
+            {
+                droneLight.tracking = false;
+                agent.speed = movementSpeed * 3.2f;
             }
             else
             {
                 droneLight.tracking = false;
+                agent.speed = movementSpeed * 8f;
             }
         }
         else

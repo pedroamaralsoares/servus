@@ -26,7 +26,7 @@ public class NPCState : MonoBehaviour
     private Rigidbody rb;
     private float jumpTimer = 0f;
     private float jumpForce = 100.0f;
-    private float alertTimer = 3.0f;
+    private float alertTimer = 7.0f;
 
     private Transform waypoint;
     private float wayRadius = 1.0f;
@@ -68,7 +68,7 @@ public class NPCState : MonoBehaviour
             state = State.Alert;
 
             GameObject closestDrone = FindClosestDrone();
-            if (closestDrone != null) {
+            if (closestDrone != null && GameObject.FindGameObjectWithTag("Player") != null) {
                 closestDrone.GetComponent<DroneNavAgent>().tracking = true;
                 closestDrone.GetComponent<DroneNavAgent>().prios.Insert(GameObject.FindGameObjectWithTag("Player").transform, 1);
             }
@@ -114,7 +114,7 @@ public class NPCState : MonoBehaviour
                         closestDrone.GetComponent<DroneNavAgent>().prios.Pop();
                     }
 
-                    alertTimer = 7.0f;
+                    alertTimer = 10.0f;
                     return;
                 }
 

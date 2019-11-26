@@ -11,13 +11,28 @@ public class DroneLight : MonoBehaviour
     public bool trackingNPC;
 
     private DroneNavAgent droneControl;
+
+    public Transform wrongSoundPrefab;
     void Start()
     {
         droneControl = transform.parent.GetComponent<DroneNavAgent>();
         target = this.transform;
     }
 
-    // Update is called once per frame
+    public IEnumerator TriggerDeath()
+    {
+        //target.transform.localEulerAngles = new Vector3(90,0,0);
+        tracking = false;
+        if (target != null && target.tag == "Player") {
+            target.localScale = new Vector3(0,0,0);
+            target.gameObject.SetActive(false);
+        }
+        Instantiate(wrongSoundPrefab,transform.position,transform.rotation);
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMove>().enabled = false;
+        yield return new WaitForSeconds (2f);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+    }
+
     void Update()
     {
         if (tracking && target != null) {
@@ -33,8 +48,8 @@ public class DroneLight : MonoBehaviour
             Debug.Log(hit.collider.name);
             if (hit.collider != null && hit.collider.tag == "Player")
             {
-                SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-                Debug.Log("DIE");
+                StartCoroutine(TriggerDeath());
+                
             }
             //else if (hit.collider != null && trackingNPC)
             //{
@@ -57,6 +72,6 @@ public class DroneLight : MonoBehaviour
 
     void SmoothLookAt (Transform target) {
         Vector3 lTargetDir = target.position - transform.position;
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(lTargetDir), Time.time * 1.5f);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(lTargetDir), Time.time * 0.5f);
     }
 }
