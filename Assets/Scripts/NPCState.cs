@@ -24,13 +24,16 @@ public class NPCState : MonoBehaviour
     private ControlPanel panel;
 
     private Rigidbody rb;
-    private float jumpTimer = 1.0f;
+    private float jumpTimer = 0f;
     private float jumpForce = 100.0f;
     private float alertTimer = 3.0f;
 
     private Transform waypoint;
     private float wayRadius = 1.0f;
     private float speed = 5.0f;
+
+
+    public Transform questionMark;
 
     private void Start()
     {
@@ -58,6 +61,7 @@ public class NPCState : MonoBehaviour
 
     public IEnumerator TriggerStateAlert()
     {
+        Instantiate(questionMark, new Vector3(transform.position.x, transform.position.y+1.5f, transform.position.z), questionMark.rotation);
         yield return new WaitForSeconds (0.5f);
         if (state == State.Normal)
         {
@@ -70,6 +74,7 @@ public class NPCState : MonoBehaviour
             }
 
             led.material.color = Color.yellow;
+            led.material.SetColor("_EmissionColor", Color.yellow);
         }
     }
 

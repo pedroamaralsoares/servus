@@ -126,6 +126,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   umbrellaPrefab: {fileID: 16533895413443342, guid: 0a0276750245b1248b02f1d27860f751,
     type: 3}
+  virtualFloor: {fileID: 0}
+  questionMark: {fileID: 521910779813634983, guid: 9dc88fa188f8ce84387d97cfd0df29bb,
+    type: 3}
 --- !u!1 &5732064564601960262
 GameObject:
   m_ObjectHideFlags: 0
