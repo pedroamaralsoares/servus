@@ -9,11 +9,13 @@ public class NPCSpawn : MonoBehaviour
 
     private GameObject npcInstance;
 
+    public float spawnTimeRepeatPeriod = 15.0f;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            InvokeRepeating("NPCSpawner", 0.0f, 15.0f);
+            InvokeRepeating("NPCSpawner", 0.0f, spawnTimeRepeatPeriod);
         }
     }
 

@@ -21,14 +21,17 @@ public class DroneLight : MonoBehaviour
 
     public IEnumerator TriggerDeath()
     {
-        //target.transform.localEulerAngles = new Vector3(90,0,0);
         tracking = false;
+
+        /* Basic death while we don't have a real character. we just disappear */
         if (target != null && target.tag == "Player") {
             target.localScale = new Vector3(0,0,0);
             target.gameObject.SetActive(false);
         }
         Instantiate(wrongSoundPrefab,transform.position,transform.rotation);
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMove>().enabled = false;
+
+        /* Wait 2 seconds until we restart the level */
         yield return new WaitForSeconds (2f);
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }

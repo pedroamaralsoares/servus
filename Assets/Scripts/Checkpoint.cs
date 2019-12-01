@@ -48,7 +48,6 @@ public class Checkpoint : MonoBehaviour
         // recent triggering
         //triggered = true;
 
-        //gameCamera.GetComponent<CameraMove>().target = pointToLook;
         cameraTarget.GetComponent<CameraTarget>().offsetFromFocusPoint = newOffsetFromFocusPoint;
 
 
