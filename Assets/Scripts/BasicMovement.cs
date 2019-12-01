@@ -25,7 +25,7 @@ public class BasicMovement : MonoBehaviour
             // We are grounded, so recalculate
             // move direction directly from axes
 
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
             moveDirection *= speed;
 
             if (Input.GetButton("Jump"))

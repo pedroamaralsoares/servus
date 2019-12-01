@@ -69,7 +69,7 @@ public class ControlPanel : MonoBehaviour
     void Trigger (Collider collider) {
          if (collider.gameObject.tag == "Player")
         {
-            if (Input.GetKeyDown("q") && sceneryManager != null) {
+            if ((Input.GetKeyDown("q") || Input.GetButtonDown("Fire1")) && sceneryManager != null) {
                 if (!playing && panelsTime <= timeLimit) {
                     sceneryManager.PlayAudio(clip);
 
@@ -79,10 +79,7 @@ public class ControlPanel : MonoBehaviour
                         cp.panelUsed = true;
                     }
                 }
-                //else {
-                //    sceneryManager.StopAudio();
-                //    playing = false;
-                //}
+                
             }
         }
     }
