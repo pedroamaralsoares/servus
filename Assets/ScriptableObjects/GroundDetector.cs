@@ -48,11 +48,12 @@ public class GroundDetector : StateData
                 Debug.DrawRay(o.transform.position, -Vector3.up * Distance, Color.yellow);
                 if (Physics.Raycast(o.transform.position, -Vector3.up, out hit, Distance))
                 {
+                    Debug.Log("grounded");
                     return true;
                 }
             }
         }
-
+        Debug.Log("AIR");
         return false;
     }
 }

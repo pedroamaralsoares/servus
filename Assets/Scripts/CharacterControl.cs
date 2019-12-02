@@ -16,6 +16,8 @@ public class CharacterControl : MonoBehaviour
     }
 
     public Animator animator;
+
+    public float moveIntensityMultiplier; // between 0 and 1
     public bool MoveRight;
     public bool MoveLeft;
     public bool Jump;
