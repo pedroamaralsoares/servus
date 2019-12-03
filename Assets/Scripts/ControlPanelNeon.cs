@@ -15,14 +15,14 @@ public class ControlPanelNeon : MonoBehaviour
 
     public bool playing;
     private float panelsTime;
-    private bool locked;
     public Material runMaterial;
-    public Material blockedMaterial;
     public Material startMaterial;
 
     private MeshRenderer meshRenderer;
 
     public ControlPanelNeon[] panels;
+
+    public NeonCube[] neonCubes;
 
     void Start()
     {
@@ -31,7 +31,6 @@ public class ControlPanelNeon : MonoBehaviour
         meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.material = startMaterial;
         playing = false;
-        locked = false;
     }
 
     void Update () {
@@ -43,7 +42,6 @@ public class ControlPanelNeon : MonoBehaviour
             if (panelsTime > timeLimit)
             {
                 playing = false;
-                locked = true;
 
                 // Play button press sound
                 GetComponent<AudioSource>().pitch = 1f;
@@ -51,11 +49,13 @@ public class ControlPanelNeon : MonoBehaviour
                 GetComponent<AudioSource>().Play();
                 GetComponent<AudioSource>().pitch = 1;
                 GetComponent<AudioSource>().volume = 1;
+
+                foreach (NeonCube nc in neonCubes) {
+                    nc.activated = true;
+                }
+
+                panelsTime = 0;
             }
-        }
-        
-        else if (locked) {
-            meshRenderer.material = blockedMaterial;
         }
 
         else {
@@ -84,6 +84,10 @@ public class ControlPanelNeon : MonoBehaviour
                     {
                         cp.playing = true;
                         cp.panelUsed = true;
+                    }
+
+                    foreach (NeonCube nc in neonCubes) {
+                        nc.activated = false;
                     }
                 }
                 
