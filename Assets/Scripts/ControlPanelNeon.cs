@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControlPanel : MonoBehaviour
+public class ControlPanelNeon : MonoBehaviour
 {
     // Start is called before the first frame update
     Transform player;
@@ -22,7 +22,7 @@ public class ControlPanel : MonoBehaviour
 
     private MeshRenderer meshRenderer;
 
-    public ControlPanel[] panels;
+    public ControlPanelNeon[] panels;
 
     void Start()
     {
@@ -45,7 +45,6 @@ public class ControlPanel : MonoBehaviour
                 playing = false;
                 locked = true;
 
-                
                 // Play button press sound
                 GetComponent<AudioSource>().pitch = 1f;
                 GetComponent<AudioSource>().volume = 0.8f; 
@@ -57,7 +56,6 @@ public class ControlPanel : MonoBehaviour
         
         else if (locked) {
             meshRenderer.material = blockedMaterial;
-            sceneryManager.StopAudio();
         }
 
         else {
@@ -82,10 +80,7 @@ public class ControlPanel : MonoBehaviour
                     // Play button press sound
                     GetComponent<AudioSource>().Play();
 
-                    // Play the new scenary's sound
-                    sceneryManager.PlayAudio(sceneryClip);
-
-                    foreach (ControlPanel cp in panels)
+                    foreach (ControlPanelNeon cp in panels)
                     {
                         cp.playing = true;
                         cp.panelUsed = true;

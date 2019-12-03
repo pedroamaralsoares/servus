@@ -41,7 +41,7 @@ public class NPCState : MonoBehaviour
         rb = this.gameObject.GetComponent<Rigidbody>();
         drones = GameObject.FindGameObjectsWithTag("Drone");
         led = this.transform.GetChild(0).GetComponent<MeshRenderer>();
-        panel = GameObject.Find("ControlPanel").GetComponent<ControlPanel>();
+        panel = GameObject.Find("ControlPanel_Rain").GetComponent<ControlPanel>();
         virtualFloor = GameObject.Find("Floor-wet").GetComponent<VirtualFloor>();
     }
 
