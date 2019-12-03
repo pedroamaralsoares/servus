@@ -10,10 +10,18 @@ public class NeonCube : MonoBehaviour
     public bool activated;
 
     private Vector3 initialPosition;
+
+    public Material basicMaterial;
+    public Material neonMaterial;
+
+    private MeshRenderer meshRenderer;
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
         initialPosition = transform.position;
+
+        meshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer.material = neonMaterial;
     }
 
     // Update is called once per frame
@@ -27,6 +35,15 @@ public class NeonCube : MonoBehaviour
         else {
             // no power, gravity impacts. the object will fall; it will be draggable
             rigidbody.useGravity = true;
+        }
+    }
+
+    public void SwitchMaterial () {
+        if (activated) {
+            meshRenderer.material = neonMaterial;
+        }
+        else {
+            meshRenderer.material = basicMaterial;
         }
     }
 }

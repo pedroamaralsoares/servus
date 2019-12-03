@@ -2214,6 +2214,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
 --- !u!1 &887884236
 GameObject:
   m_ObjectHideFlags: 0
@@ -5185,8 +5187,8 @@ MonoBehaviour:
   timeLimit: 5
   panelUsed: 0
   playing: 0
-  runMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
-  startMaterial: {fileID: 2100000, guid: dd21f2ee0cd50014b8e78060581689dd, type: 2}
+  runMaterial: {fileID: 2100000, guid: dd21f2ee0cd50014b8e78060581689dd, type: 2}
+  startMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   panels:
   - {fileID: 552608153844041567}
   neonCubes:

@@ -9,6 +9,8 @@ public class ControlPanelNeon : MonoBehaviour
     Transform player;
     public SceneryManager sceneryManager;
     public AudioClip sceneryClip;
+
+    private AudioSource audioSource;
     public float timeLimit = 3f;
 
     public bool panelUsed;
@@ -31,6 +33,8 @@ public class ControlPanelNeon : MonoBehaviour
         meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.material = startMaterial;
         playing = false;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update () {
@@ -44,14 +48,14 @@ public class ControlPanelNeon : MonoBehaviour
                 playing = false;
 
                 // Play button press sound
-                GetComponent<AudioSource>().pitch = 1f;
-                GetComponent<AudioSource>().volume = 0.8f; 
-                GetComponent<AudioSource>().Play();
-                GetComponent<AudioSource>().pitch = 1;
-                GetComponent<AudioSource>().volume = 1;
+                audioSource.pitch = 1f;
+                audioSource.volume = 0.8f; 
+                audioSource.Play();
+                
 
                 foreach (NeonCube nc in neonCubes) {
                     nc.activated = true;
+                    nc.SwitchMaterial();
                 }
 
                 panelsTime = 0;
@@ -78,6 +82,8 @@ public class ControlPanelNeon : MonoBehaviour
                 if (!playing && panelsTime <= timeLimit) {
 
                     // Play button press sound
+                    audioSource.pitch = 3;
+                    audioSource.volume = 1;
                     GetComponent<AudioSource>().Play();
 
                     foreach (ControlPanelNeon cp in panels)
@@ -88,6 +94,7 @@ public class ControlPanelNeon : MonoBehaviour
 
                     foreach (NeonCube nc in neonCubes) {
                         nc.activated = false;
+                        nc.SwitchMaterial();
                     }
                 }
                 
