@@ -37,9 +37,9 @@ public class GroundDetector : StateData
 
     private bool IsGrounded(CharacterControl control)
     {
-        if (-0.001 < control.RIGID_BODY.velocity.y && control.RIGID_BODY.velocity.y <= 0.0f)
+        if (-0.00001 < control.RIGID_BODY.velocity.y && control.RIGID_BODY.velocity.y <= 0.0f)
             return true;
-
+        
         if (Mathf.Abs(control.RIGID_BODY.velocity.y) > 0f)
         {
             foreach (GameObject o in control.BottomSpheres)
