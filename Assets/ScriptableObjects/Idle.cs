@@ -50,7 +50,7 @@ public class Idle : StateData
     {
         foreach (GameObject o in control.FrontSpheres.GetRange(5, 5))
         {
-            Debug.DrawRay(o.transform.position, o.transform.position * BlockDistance);
+            Debug.DrawRay(o.transform.position, control.transform.forward * BlockDistance);
             RaycastHit hit;
             if (Physics.Raycast(o.transform.position, control.transform.forward, out hit, BlockDistance))
             {
