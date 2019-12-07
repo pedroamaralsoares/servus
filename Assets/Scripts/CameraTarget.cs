@@ -21,7 +21,7 @@ public class CameraTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.localPosition = Vector3.Lerp(transform.localPosition,offsetFromFocusPoint, 1 * Time.deltaTime);
+        transform.localPosition = Vector3.Lerp(transform.localPosition, offsetFromFocusPoint, 1 * Time.deltaTime);
         //transform.position = Vector3.Lerp(transform.position, new Vector3(target.position.x -10, target.position.y, -1f*distance), 3 * Time.deltaTime);
     }
 }

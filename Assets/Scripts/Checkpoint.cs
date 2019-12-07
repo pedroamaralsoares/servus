@@ -49,7 +49,5 @@ public class Checkpoint : MonoBehaviour
         //triggered = true;
 
         cameraTarget.GetComponent<CameraTarget>().offsetFromFocusPoint = newOffsetFromFocusPoint;
-
-
     }
 }

@@ -29,7 +29,7 @@ public class MoveForward : StateData
 
         if (c.MoveRight)
         {
-            c.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            c.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
             if (!CheckFront(c))
             {
                 c.transform.Translate(Vector3.forward * Speed * SpeedGraph.Evaluate(stateInfo.normalizedTime) * Time.deltaTime);
@@ -38,7 +38,7 @@ public class MoveForward : StateData
 
         if (c.MoveLeft)
         {
-            c.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            c.transform.rotation = Quaternion.Euler(0f, 270f, 0f);
             if (!CheckFront(c))
             {
                 c.transform.Translate(Vector3.forward * Speed * SpeedGraph.Evaluate(stateInfo.normalizedTime) * Time.deltaTime);

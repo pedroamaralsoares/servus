@@ -8,36 +8,32 @@ public class DroneNavAgent : MonoBehaviour
 
     private const int NPC_PRIORITY = 2;
     private const int PLAYER_PRIORITY = 1;
-    public enum State
-    {
-        Sleeping,
-        PlayerTargeting,
-        NPCTargeting
-    }
-    private State state = State.Sleeping;
 
+    public IDictionary<string, Transform> npcTargets;
     public PriorityQueue<Transform, int> prios;
+    public bool playerTarget;
 
     private NavMeshAgent agent;
     public float movementSpeed = 5;
     public Vector3 leftWaypoint;
     public Vector3 rightWaypoint;
 
-    public SceneryManager sceneryManager;
-    private VirtualFloor virtualFloor;
-
     public Vector3 targetWaypoint;
     public Transform target;
     public bool tracking;
     public Vector3 initialPosition;
 
+    private GameObject player;
 
     public DroneLight droneLight;
     void Start()
     {
         prios = new PriorityQueue<Transform, int>(NPC_PRIORITY);
+        npcTargets = new Dictionary<string, Transform>();
         agent = GetComponent<NavMeshAgent>();
         tracking = false;
+        playerTarget = false;
+        player = GameObject.FindGameObjectWithTag("Player");
         targetWaypoint = transform.position;
         initialPosition = transform.position;
         droneLight = transform.Find("DroneLight").GetComponent<DroneLight>();
@@ -53,11 +49,25 @@ public class DroneNavAgent : MonoBehaviour
         {
             Transform check = prios.Top();
 
-            if (check != null)
+            Debug.Log(npcTargets.Count);
+
+            if (playerTarget && player.activeSelf)
             {
-                target = check;
+                target = player.transform;
                 targetWaypoint = new Vector3(target.position.x, transform.position.y, target.position.z);
             }
+            else if (npcTargets.Count != 0)
+            {
+                var e = npcTargets.GetEnumerator();
+                e.MoveNext();
+                target = e.Current.Value;
+                targetWaypoint = new Vector3(target.position.x, transform.position.y, target.position.z);
+            }
+            //if (check != null)
+            //{
+            //    target = check;
+            //    targetWaypoint = new Vector3(target.position.x, transform.position.y, target.position.z);
+            //}
             else
             {
                 target = droneLight.gameObject.transform;
@@ -68,16 +78,6 @@ public class DroneNavAgent : MonoBehaviour
             {
                 droneLight.tracking = true;
                 droneLight.target = target;
-                //if (prios.TopPriority() == NPC_PRIORITY)
-                //{
-                //    droneLight.trackingNPC = true;
-                //}
-                //else
-                //{
-                //    droneLight.trackingNPC = false;
-                //}
-
-                //agent.speed = movementSpeed * 2;
                 agent.speed = movementSpeed * 0.8f;
             }
             else if (Vector3.Distance(transform.position, targetWaypoint) < 16)

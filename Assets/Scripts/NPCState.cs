@@ -32,6 +32,8 @@ public class NPCState : MonoBehaviour
     private float wayRadius = 1.0f;
     private float speed = 5.0f;
 
+    public static int Count = 0;
+    private int myCount;
 
     public Transform questionMark;
 
@@ -40,9 +42,26 @@ public class NPCState : MonoBehaviour
         waypoint = GameObject.Find("Waypoint").transform;
         rb = this.gameObject.GetComponent<Rigidbody>();
         drones = GameObject.FindGameObjectsWithTag("Drone");
-        led = this.transform.GetChild(0).GetComponent<MeshRenderer>();
-        panel = GameObject.Find("ControlPanel_Rain").GetComponent<ControlPanel>();
+        Debug.Log(this.transform.GetChild(0).transform.childCount);
+        led = FindDeepChild(this.transform, "Sphere").GetComponent<MeshRenderer>();
+        panel = GameObject.Find("ControlPanel").GetComponent<ControlPanel>();
         virtualFloor = GameObject.Find("Floor-wet").GetComponent<VirtualFloor>();
+        myCount = Count++;
+    }
+
+    public Transform FindDeepChild(Transform aParent, string aName)
+    {
+        Queue<Transform> queue = new Queue<Transform>();
+        queue.Enqueue(aParent);
+        while (queue.Count > 0)
+        {
+            var c = queue.Dequeue();
+            if (c.name == aName)
+                return c;
+            foreach (Transform t in c)
+                queue.Enqueue(t);
+        }
+        return null;
     }
 
     public void StartWalking()
@@ -55,7 +74,8 @@ public class NPCState : MonoBehaviour
         if (closestDrone != null)
         {
             closestDrone.GetComponent<DroneNavAgent>().tracking = true;
-            closestDrone.GetComponent<DroneNavAgent>().prios.Insert(this.transform, 2);
+            closestDrone.GetComponent<DroneNavAgent>().npcTargets.Add("npc" + myCount, this.transform);
+            //closestDrone.GetComponent<DroneNavAgent>().prios.Insert(this.transform, 2);
         }  
     }
 
@@ -70,7 +90,8 @@ public class NPCState : MonoBehaviour
             GameObject closestDrone = FindClosestDrone();
             if (closestDrone != null && GameObject.FindGameObjectWithTag("Player") != null) {
                 closestDrone.GetComponent<DroneNavAgent>().tracking = true;
-                closestDrone.GetComponent<DroneNavAgent>().prios.Insert(GameObject.FindGameObjectWithTag("Player").transform, 1);
+                closestDrone.GetComponent<DroneNavAgent>().playerTarget = true;
+                //closestDrone.GetComponent<DroneNavAgent>().prios.Insert(GameObject.FindGameObjectWithTag("Player").transform, 1);
             }
 
             led.material.color = Color.yellow;
@@ -111,7 +132,7 @@ public class NPCState : MonoBehaviour
 
                     if (closestDrone != null)
                     {
-                        closestDrone.GetComponent<DroneNavAgent>().prios.Pop();
+                        closestDrone.GetComponent<DroneNavAgent>().playerTarget = false;
                     }
 
                     alertTimer = 10.0f;
@@ -133,7 +154,8 @@ public class NPCState : MonoBehaviour
                     GameObject closestDrone = FindClosestDrone();
                     if (closestDrone != null)
                     {
-                        closestDrone.GetComponent<DroneNavAgent>().prios.Pop();
+                        closestDrone.GetComponent<DroneNavAgent>().npcTargets.Remove("npc" + myCount);
+                        //closestDrone.GetComponent<DroneNavAgent>().prios.Pop();
                     }
                     Destroy(this.gameObject);
                 }

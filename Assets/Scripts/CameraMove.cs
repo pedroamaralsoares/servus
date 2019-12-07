@@ -22,7 +22,7 @@ public class CameraMove : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(transform.position.x, transform.position.y, -1f * distance);
-        transform.LookAt(new Vector3 (target.position.x, player.position.y, target.position.z));
-        transform.position = Vector3.Lerp(transform.position, new Vector3(target.position.x, target.position.y, -1f*distance), 3 * Time.deltaTime);
+        transform.LookAt(new Vector3 (target.parent.position.x, player.position.y, target.position.z));
+        transform.position = Vector3.Lerp(transform.position, new Vector3(target.parent.position.x, target.position.y, -1f*distance), 3 * Time.deltaTime);
     }
 }
