@@ -55,7 +55,7 @@ public class DroneLight : MonoBehaviour
         Debug.DrawRay(transform.position,fwd*15, Color.green,2);
         if (Physics.Raycast(transform.position, fwd, out hit, 200))
         {
-            Debug.Log(hit.collider.name);
+            //Debug.Log(hit.collider.name);
             if (hit.collider != null && hit.collider.tag == "Player")
             {
                 StartCoroutine(TriggerDeath());

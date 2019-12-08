@@ -14,14 +14,15 @@ public class CameraTarget : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         target = player;
-        transform.parent = target;
+        //transform.parent = target;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.localPosition = Vector3.Lerp(transform.localPosition, offsetFromFocusPoint, 1 * Time.deltaTime);
-        //transform.position = Vector3.Lerp(transform.position, new Vector3(target.position.x -10, target.position.y, -1f*distance), 3 * Time.deltaTime);
+        //transform.localPosition = Vector3.Lerp(transform.localPosition, offsetFromFocusPoint, 1 * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.localPosition, target.position + offsetFromFocusPoint, 2 * Time.deltaTime);
+        
     }
 }

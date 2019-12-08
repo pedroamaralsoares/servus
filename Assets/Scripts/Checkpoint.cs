@@ -13,6 +13,9 @@ public class Checkpoint : MonoBehaviour
     public bool FarToCenter;
     Transform pointToLook; // where the camera has to focus on in the new area
     public Vector3 newOffsetFromFocusPoint = new Vector3(15,0,10);
+    public float newDistance;
+
+    private float elapsed = 0.0f;
 
     void Start () {
         gameCamera = GameObject.FindGameObjectWithTag("MainCamera").transform;
@@ -49,5 +52,11 @@ public class Checkpoint : MonoBehaviour
         //triggered = true;
 
         cameraTarget.GetComponent<CameraTarget>().offsetFromFocusPoint = newOffsetFromFocusPoint;
+
+        if (newDistance > 0) {
+                
+            gameCamera.GetComponent<CameraMove>().distance = newDistance;
+        }
     }
+
 }
