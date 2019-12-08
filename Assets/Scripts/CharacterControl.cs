@@ -62,6 +62,11 @@ public class CharacterControl : MonoBehaviour
         bottomBack.transform.parent = this.transform;
         topFront.transform.parent = this.transform;
 
+        // adjust local position
+        bottomFront.transform.localPosition = new Vector3 (0, bottomFront.transform.localPosition.y, bottomFront.transform.localPosition.z);
+        bottomBack.transform.localPosition = new Vector3 (0, bottomBack.transform.localPosition.y, bottomBack.transform.localPosition.z);
+        topFront.transform.localPosition = new Vector3 (0, topFront.transform.localPosition.y, topFront.transform.localPosition.z);
+
         BottomSpheres.Add(bottomFront);
         BottomSpheres.Add(bottomBack);
 
@@ -83,7 +88,10 @@ public class CharacterControl : MonoBehaviour
 
             GameObject newObj = CreateEdgeSphere(pos);
             newObj.transform.parent = this.transform;
+
+            // adjust local position
             newObj.transform.localPosition = new Vector3 (0, newObj.transform.localPosition.y, newObj.transform.localPosition.z);
+
             spheresList.Add(newObj);
         }
     }
