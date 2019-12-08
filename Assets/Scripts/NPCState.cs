@@ -75,7 +75,6 @@ public class NPCState : MonoBehaviour
         {
             closestDrone.GetComponent<DroneNavAgent>().tracking = true;
             closestDrone.GetComponent<DroneNavAgent>().npcTargets.Add("npc" + myCount, this.transform);
-            //closestDrone.GetComponent<DroneNavAgent>().prios.Insert(this.transform, 2);
         }  
     }
 
@@ -91,7 +90,6 @@ public class NPCState : MonoBehaviour
             if (closestDrone != null && GameObject.FindGameObjectWithTag("Player") != null) {
                 closestDrone.GetComponent<DroneNavAgent>().tracking = true;
                 closestDrone.GetComponent<DroneNavAgent>().playerTarget = true;
-                //closestDrone.GetComponent<DroneNavAgent>().prios.Insert(GameObject.FindGameObjectWithTag("Player").transform, 1);
             }
 
             led.material.color = Color.yellow;
@@ -155,7 +153,6 @@ public class NPCState : MonoBehaviour
                     if (closestDrone != null)
                     {
                         closestDrone.GetComponent<DroneNavAgent>().npcTargets.Remove("npc" + myCount);
-                        //closestDrone.GetComponent<DroneNavAgent>().prios.Pop();
                     }
                     Destroy(this.gameObject);
                 }
@@ -179,8 +176,7 @@ public class NPCState : MonoBehaviour
                 speed += 3;
             }
         }
-
-        //Debug.Log(cover);
+;
         if (cover == State.Raining && !panel.playing)
         {
             cover = State.Clear;

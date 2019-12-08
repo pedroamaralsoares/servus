@@ -5,12 +5,7 @@ using UnityEngine.AI;
 
 public class DroneNavAgent : MonoBehaviour
 {
-
-    private const int NPC_PRIORITY = 2;
-    private const int PLAYER_PRIORITY = 1;
-
     public IDictionary<string, Transform> npcTargets;
-    public PriorityQueue<Transform, int> prios;
     public bool playerTarget;
 
     private NavMeshAgent agent;
@@ -28,7 +23,6 @@ public class DroneNavAgent : MonoBehaviour
     public DroneLight droneLight;
     void Start()
     {
-        prios = new PriorityQueue<Transform, int>(NPC_PRIORITY);
         npcTargets = new Dictionary<string, Transform>();
         agent = GetComponent<NavMeshAgent>();
         tracking = false;
@@ -47,10 +41,6 @@ public class DroneNavAgent : MonoBehaviour
 
         if (tracking)
         {
-            Transform check = prios.Top();
-
-            Debug.Log(npcTargets.Count);
-
             if (playerTarget && player.activeSelf)
             {
                 target = player.transform;
@@ -63,11 +53,6 @@ public class DroneNavAgent : MonoBehaviour
                 target = e.Current.Value;
                 targetWaypoint = new Vector3(target.position.x, transform.position.y, target.position.z);
             }
-            //if (check != null)
-            //{
-            //    target = check;
-            //    targetWaypoint = new Vector3(target.position.x, transform.position.y, target.position.z);
-            //}
             else
             {
                 target = droneLight.gameObject.transform;
