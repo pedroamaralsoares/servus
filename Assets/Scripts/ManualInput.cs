@@ -46,7 +46,7 @@ public class ManualInput : MonoBehaviour
 
             if (VirtualInputManager.Instance.MovingObjectLeft)
             {
-                if (characterControl.gameObject.transform.rotation.y == 0f)
+                if (characterControl.gameObject.transform.rotation.y == 90f)
                 {
                     characterControl.Pulling = true;
                     characterControl.Pushing = false;
@@ -59,7 +59,7 @@ public class ManualInput : MonoBehaviour
             }
             else if (VirtualInputManager.Instance.MovingObjectRight)
             {
-                if (characterControl.gameObject.transform.rotation.y == 0f)
+                if (characterControl.gameObject.transform.rotation.y == 90f)
                 {
                     characterControl.Pushing = true;
                     characterControl.Pulling = false;

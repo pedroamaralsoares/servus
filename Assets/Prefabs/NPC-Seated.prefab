@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7313152386536492305}
   - component: {fileID: 836089424474176997}
   - component: {fileID: 732928525428486254}
-  - component: {fileID: 9110656957208906868}
+  - component: {fileID: 1041828804207495334}
   m_Layer: 0
   m_Name: NPC-Seated
   m_TagString: NPC
@@ -112,7 +112,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &9110656957208906868
+--- !u!114 &1041828804207495334
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,14 +121,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2538967415915510437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f12deecbd02924541b9047095f590d37, type: 3}
+  m_Script: {fileID: 11500000, guid: bf31de81605885349a2a9482877e569d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  umbrellaPrefab: {fileID: 16533895413443342, guid: 0a0276750245b1248b02f1d27860f751,
-    type: 3}
-  virtualFloor: {fileID: 0}
-  questionMark: {fileID: 521910779813634983, guid: 9dc88fa188f8ce84387d97cfd0df29bb,
-    type: 3}
+  ID: 0
+  Animator: {fileID: 1064853262751281385}
+  Move: 0
+  Wonder: 0
+  Drones: []
+  LED: {fileID: 0}
 --- !u!1 &5732064564601960262
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +159,7 @@ Transform:
   m_GameObject: {fileID: 5732064564601960262}
   m_LocalRotation: {x: 0.00000002235174, y: 4.5371994e-11, z: -1.787394e-11, w: 1}
   m_LocalPosition: {x: -0.068, y: 0.155, z: 0.009}
-  m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
+  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_Children: []
   m_Father: {fileID: 885560733128473444}
   m_RootOrder: 1
@@ -241,11 +242,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3821757881975588146}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
-        type: 3}
-      propertyPath: m_Name
-      value: player_mixamo_rig
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -316,11 +312,47 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5e4c60f624c23714e9daeaec3175e4d6, type: 2}
+    - target: {fileID: -927199367670048503, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
+        type: 3}
+      propertyPath: m_Name
+      value: player_mixamo_rig
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647679495653059910, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.00076073024
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647679495653059910, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.029332845
+      objectReference: {fileID: 0}
+    - target: {fileID: -4749817584017886579, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0000006065274
+      objectReference: {fileID: 0}
+    - target: {fileID: -4749817584017886579, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0038869765
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f77490b5efdc694a9c7be1d2b1dd827, type: 3}
 --- !u!4 &6939235204986838419 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
+    type: 3}
+  m_PrefabInstance: {fileID: 2681798374775699081}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1064853262751281385 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
     type: 3}
   m_PrefabInstance: {fileID: 2681798374775699081}
   m_PrefabAsset: {fileID: 0}

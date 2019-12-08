@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc9a41f3de0e2d448a8b7e1dfb746c0, type: 3}
+  m_Name: NPC_Alert
+  m_EditorClassIdentifier: 
+  AlertTimer: 0.6068299
+  QuestionMark: {fileID: 5951975769519421844, guid: c7acf7270cf172a4a8be58916e9522d4,
+    type: 3}

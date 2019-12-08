@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class DroneNavAgent : MonoBehaviour
 {
     public IDictionary<string, Transform> npcTargets;
-    public bool playerTarget;
+    public int playerTarget;
 
     private NavMeshAgent agent;
     public float movementSpeed = 5;
@@ -26,7 +26,7 @@ public class DroneNavAgent : MonoBehaviour
         npcTargets = new Dictionary<string, Transform>();
         agent = GetComponent<NavMeshAgent>();
         tracking = false;
-        playerTarget = false;
+        playerTarget = 0;
         player = GameObject.FindGameObjectWithTag("Player");
         targetWaypoint = transform.position;
         initialPosition = transform.position;
@@ -41,7 +41,7 @@ public class DroneNavAgent : MonoBehaviour
 
         if (tracking)
         {
-            if (playerTarget && player.activeSelf)
+            if (playerTarget != 0 && player.activeSelf)
             {
                 target = player.transform;
                 targetWaypoint = new Vector3(target.position.x, transform.position.y, target.position.z);
@@ -59,7 +59,7 @@ public class DroneNavAgent : MonoBehaviour
                 targetWaypoint = new Vector3(initialPosition.x, 0, initialPosition.z);
             }
 
-            if (Vector3.Distance(transform.position, targetWaypoint) < 10)
+            if (Vector3.Distance(transform.position, targetWaypoint) < 5.5)
             {
                 droneLight.tracking = true;
                 droneLight.target = target;
@@ -68,17 +68,17 @@ public class DroneNavAgent : MonoBehaviour
             else if (Vector3.Distance(transform.position, targetWaypoint) < 16)
             {
                 droneLight.tracking = false;
-                agent.speed = movementSpeed * 3.2f;
+                agent.speed = movementSpeed * 2.5f;
             }
             else if (Vector3.Distance(transform.position, targetWaypoint) < 30)
             {
                 droneLight.tracking = false;
-                agent.speed = movementSpeed * 6f;
+                agent.speed = movementSpeed * 4.5f;
             }
             else
             {
                 droneLight.tracking = false;
-                agent.speed = movementSpeed * 10f;
+                agent.speed = movementSpeed * 6f;
             }
         }
         else

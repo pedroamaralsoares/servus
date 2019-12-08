@@ -35,7 +35,6 @@ public class CharacterState : StateMachineBehaviour
         {
             characterControl = animator.GetComponentInParent<CharacterControl>();
         }
-
         return characterControl;
     }
 }

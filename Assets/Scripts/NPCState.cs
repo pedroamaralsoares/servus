@@ -89,7 +89,7 @@ public class NPCState : MonoBehaviour
             GameObject closestDrone = FindClosestDrone();
             if (closestDrone != null && GameObject.FindGameObjectWithTag("Player") != null) {
                 closestDrone.GetComponent<DroneNavAgent>().tracking = true;
-                closestDrone.GetComponent<DroneNavAgent>().playerTarget = true;
+                closestDrone.GetComponent<DroneNavAgent>().playerTarget++;
             }
 
             led.material.color = Color.yellow;
@@ -130,7 +130,7 @@ public class NPCState : MonoBehaviour
 
                     if (closestDrone != null)
                     {
-                        closestDrone.GetComponent<DroneNavAgent>().playerTarget = false;
+                        closestDrone.GetComponent<DroneNavAgent>().playerTarget--;
                     }
 
                     alertTimer = 10.0f;
