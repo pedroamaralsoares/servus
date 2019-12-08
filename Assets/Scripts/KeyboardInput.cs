@@ -37,12 +37,12 @@ public class KeyboardInput : MonoBehaviour
         {
             VirtualInputManager.Instance.Grab = true;
 
-            if (Input.GetAxisRaw("Horizontal") > 0)
+            if (Input.GetAxisRaw("Horizontal") < 0)
             {
                 VirtualInputManager.Instance.MovingObjectRight = true;
                 VirtualInputManager.Instance.MovingObjectLeft = false;
             }
-            else if (Input.GetAxisRaw("Horizontal") < 0)
+            else if (Input.GetAxisRaw("Horizontal") > 0)
             {
                 VirtualInputManager.Instance.MovingObjectLeft = true;
                 VirtualInputManager.Instance.MovingObjectRight = false;

@@ -83,6 +83,7 @@ public class CharacterControl : MonoBehaviour
 
             GameObject newObj = CreateEdgeSphere(pos);
             newObj.transform.parent = this.transform;
+            newObj.transform.localPosition = new Vector3 (0, newObj.transform.localPosition.y, newObj.transform.localPosition.z);
             spheresList.Add(newObj);
         }
     }

@@ -28,7 +28,6 @@ public class CameraMove : MonoBehaviour
         transform.LookAt(new Vector3 (target.position.x, (player.position.y + target.position.y)/2, target.position.z));
 
         newDistance = Mathf.SmoothDamp(newDistance, -1f * distance, ref yVelocity, smoothTime);
-        Debug.Log(newDistance);
         //float newDistance = Mathf.Clamp(transform.position.z + 1 * Time.deltaTime, minMyValue, maxMyValue);
 
         transform.position = Vector3.Lerp(transform.position, new Vector3(target.position.x, target.position.y, newDistance), 3 * Time.deltaTime);

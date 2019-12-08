@@ -11,6 +11,7 @@ public class Jump : StateData
 
     public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
+        Debug.Log(JumpForce);
         characterState.GetCharacterControl(animator).RIGID_BODY.AddForce(Vector3.up * JumpForce);
         animator.SetBool(CharacterControl.TransitionParameter.Grounded.ToString(), false);
     }
