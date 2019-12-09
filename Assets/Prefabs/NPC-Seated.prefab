@@ -242,6 +242,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3821757881975588146}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
+        type: 3}
+      propertyPath: m_Name
+      value: player_mixamo_rig
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -317,10 +322,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 5e4c60f624c23714e9daeaec3175e4d6, type: 2}
-    - target: {fileID: -927199367670048503, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
+    - target: {fileID: -6057140222963153312, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
         type: 3}
-      propertyPath: m_Name
-      value: player_mixamo_rig
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7647679495653059910, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
         type: 3}
