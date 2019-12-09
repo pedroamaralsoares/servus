@@ -36,10 +36,14 @@ public class NeonCube : MonoBehaviour
             rigidbody.useGravity = false;
             transform.position = Vector3.Lerp(transform.position,initialPosition,6*Time.deltaTime);
             transform.rotation = Quaternion.Lerp(transform.rotation,initialRotation,6*Time.deltaTime);
+
+            gameObject.tag = "Untagged";
         }
         else {
             // no power, gravity impacts. the object will fall; it will be draggable
             rigidbody.useGravity = true;
+
+            gameObject.tag = "Draggable";
         }
     }
 

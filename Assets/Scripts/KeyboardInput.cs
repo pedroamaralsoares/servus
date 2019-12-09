@@ -33,7 +33,7 @@ public class KeyboardInput : MonoBehaviour
             VirtualInputManager.Instance.Jump = false;
         }
 
-        if (Input.GetKey(KeyCode.W) && !VirtualInputManager.Instance.Jump)
+        if ((Input.GetKey(KeyCode.W) || Input.GetButton("Fire1")) && !VirtualInputManager.Instance.Jump)
         {
             VirtualInputManager.Instance.Grab = true;
 

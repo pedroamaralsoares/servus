@@ -14,6 +14,8 @@ public class FloorButton : MonoBehaviour
 
     private MeshRenderer meshRenderer;
 
+    public Door door;
+
 
     void Start()
     {
@@ -46,13 +48,16 @@ public class FloorButton : MonoBehaviour
 
     void OnTriggerExit() {
         meshRenderer.material = startMaterial;
+        activated = false;
+        door.opened = false;
     }
 
     void Trigger (Collider collider) {
-        if (collider.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Draggable")
         {
              meshRenderer.material = runMaterial;
              activated = true;
+             door.opened = true;
         }
     }
 }
