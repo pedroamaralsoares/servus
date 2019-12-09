@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1aa97b4fb33cab47bbab5a597bb19f5, type: 3}
   m_Name: NPC_Walk
   m_EditorClassIdentifier: 
-  Speed: 3.15
+  Speed: 3.9
   DestroyRadius: 1
-  Waypoint: {fileID: 0}

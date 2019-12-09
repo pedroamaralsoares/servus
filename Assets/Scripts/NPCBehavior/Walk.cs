@@ -6,20 +6,10 @@ public class Walk : NPCStateData
 {
     public float Speed;
     public float DestroyRadius;
-    public Transform Waypoint;
 
     public override void OnEnter(OtherNPCState npcState, Animator animator, AnimatorStateInfo stateInfo)
     {
-        NPCControl c = npcState.GetNPCControl(animator);
 
-        GameObject closestDrone = c.FindClosestDrone();
-        if (closestDrone != null)
-        {
-            closestDrone.GetComponent<DroneNavAgent>().tracking = true;
-            closestDrone.GetComponent<DroneNavAgent>().npcTargets.Add("npc" + c.ID, c.gameObject.transform);
-        }
-
-        Waypoint = GameObject.Find("Waypoint").transform;
     }
 
     public override void UpdateAbility(OtherNPCState npcState, Animator animator, AnimatorStateInfo stateInfo)
@@ -28,7 +18,7 @@ public class Walk : NPCStateData
 
         if (c.Move)
         {
-            if (Vector3.Distance(Waypoint.position, c.transform.position) < DestroyRadius)
+            if (Vector3.Distance(c.Waypoint.position, c.transform.position) < DestroyRadius)
             {
                 GameObject closestDrone = c.FindClosestDrone();
                 if (closestDrone != null)
@@ -42,10 +32,14 @@ public class Walk : NPCStateData
             }
             else
             {
-                Vector3 newDirection = Vector3.RotateTowards(c.transform.position, Waypoint.transform.position, 1f, 0.0f);
-                c.transform.LookAt(Waypoint.transform.position);
-                c.transform.position = Vector3.MoveTowards(c.transform.position, Waypoint.transform.position, Time.deltaTime * Speed);
+                Vector3 newDirection = Vector3.RotateTowards(c.transform.position, new Vector3(c.Waypoint.position.x, c.transform.position.y, c.Waypoint.position.z), 1f, 0.0f);
+                c.transform.LookAt(new Vector3(c.Waypoint.position.x, c.transform.position.y, c.Waypoint.position.z));
+                c.transform.position = Vector3.MoveTowards(c.transform.position, c.Waypoint.transform.position, Time.deltaTime * Speed);
             }
+        }
+        else
+        {
+            animator.SetBool(NPCControl.TransitionParameter.Move.ToString(), false);
         }
     }
 

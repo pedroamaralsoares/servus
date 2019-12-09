@@ -24,6 +24,13 @@ public class NPCAttach : MonoBehaviour
         {
             Count++;
             other.gameObject.transform.parent = null;
+
+            GameObject closestDrone = other.gameObject.GetComponent<NPCControl>().FindClosestDrone();
+            if (closestDrone != null)
+            {
+                closestDrone.GetComponent<DroneNavAgent>().tracking = true;
+                closestDrone.GetComponent<DroneNavAgent>().npcTargets.Add("npc" + other.gameObject.GetComponent<NPCControl>().ID, other.gameObject.transform);
+            }
         }
 
         if (Count == NumberOfNPCs)

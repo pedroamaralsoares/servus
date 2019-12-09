@@ -16,6 +16,7 @@ public class NPCControl : MonoBehaviour
 
     public bool Move;
     public bool Wonder;
+    public Transform Waypoint;
 
     public GameObject[] Drones;
     public MeshRenderer LED;
