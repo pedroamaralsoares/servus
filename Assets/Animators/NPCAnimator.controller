@@ -38,7 +38,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListAbilityData:
-  - {fileID: 11400000, guid: 6d4ee2c022be2214c98d7982cb8d3a1b, type: 2}
+  - {fileID: 11400000, guid: 32a852d20ef9a4943824cfc1145940d4, type: 2}
 --- !u!1102 &-5983770205969936994
 AnimatorState:
   serializedVersion: 5

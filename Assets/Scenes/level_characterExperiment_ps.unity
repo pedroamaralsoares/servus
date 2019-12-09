@@ -1148,6 +1148,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321000271}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &390626164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4349107471216986347, guid: 7fa3413e5e9cc344883e3dcc7e993c6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1511336210}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c2f0a12c85dfa4d9b6707c25b78bfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &442519753
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,6 +2218,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &959210392 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4349107471216986347, guid: 7fa3413e5e9cc344883e3dcc7e993c6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1779243550}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c2f0a12c85dfa4d9b6707c25b78bfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &972560469
 GameObject:
   m_ObjectHideFlags: 0
@@ -3520,6 +3544,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4349107471216986347, guid: 7fa3413e5e9cc344883e3dcc7e993c6b,
+        type: 3}
+      propertyPath: sceneryManager
+      value: 
+      objectReference: {fileID: 1662518297}
+    - target: {fileID: 4349107471216986347, guid: 7fa3413e5e9cc344883e3dcc7e993c6b,
+        type: 3}
+      propertyPath: panels.Array.data[1]
+      value: 
+      objectReference: {fileID: 959210392}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fa3413e5e9cc344883e3dcc7e993c6b, type: 3}
 --- !u!1 &1521120475
@@ -4269,6 +4303,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4349107471216986347, guid: 7fa3413e5e9cc344883e3dcc7e993c6b,
+        type: 3}
+      propertyPath: sceneryManager
+      value: 
+      objectReference: {fileID: 1662518297}
+    - target: {fileID: 4349107471216986347, guid: 7fa3413e5e9cc344883e3dcc7e993c6b,
+        type: 3}
+      propertyPath: panels.Array.data[1]
+      value: 
+      objectReference: {fileID: 390626164}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fa3413e5e9cc344883e3dcc7e993c6b, type: 3}
 --- !u!1001 &1928292593
@@ -4914,14 +4958,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 589099787}
     m_Modifications:
-    - target: {fileID: 1000010046428508, guid: c946fa75949b4b0469e29c6e49bd3577, type: 3}
-      propertyPath: m_Name
-      value: AreaLight
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000010046428508, guid: c946fa75949b4b0469e29c6e49bd3577, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4000014113918066, guid: c946fa75949b4b0469e29c6e49bd3577, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4976,6 +5012,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000014113918066, guid: c946fa75949b4b0469e29c6e49bd3577, type: 3}
       propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010046428508, guid: c946fa75949b4b0469e29c6e49bd3577, type: 3}
+      propertyPath: m_Name
+      value: AreaLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010046428508, guid: c946fa75949b4b0469e29c6e49bd3577, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 33000012356353452, guid: c946fa75949b4b0469e29c6e49bd3577,
@@ -5215,16 +5259,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5951975769519421841, guid: c7acf7270cf172a4a8be58916e9522d4,
-        type: 3}
-      propertyPath: m_Name
-      value: QuestionMark
-      objectReference: {fileID: 0}
-    - target: {fileID: 5951975769519421841, guid: c7acf7270cf172a4a8be58916e9522d4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5951975769519421844, guid: c7acf7270cf172a4a8be58916e9522d4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5280,6 +5314,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 175.48901
       objectReference: {fileID: 0}
+    - target: {fileID: 5951975769519421841, guid: c7acf7270cf172a4a8be58916e9522d4,
+        type: 3}
+      propertyPath: m_Name
+      value: QuestionMark
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951975769519421841, guid: c7acf7270cf172a4a8be58916e9522d4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7acf7270cf172a4a8be58916e9522d4, type: 3}
 --- !u!1001 &7799297239664469132
@@ -5289,16 +5333,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4497345773278848475, guid: 9344e0a0991e6c84dbafefe065009554,
-        type: 3}
-      propertyPath: m_Name
-      value: SOUND_DroneKill
-      objectReference: {fileID: 0}
-    - target: {fileID: 4497345773278848475, guid: 9344e0a0991e6c84dbafefe065009554,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8634890260165206597, guid: 9344e0a0991e6c84dbafefe065009554,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5352,6 +5386,16 @@ PrefabInstance:
     - target: {fileID: 8634890260165206597, guid: 9344e0a0991e6c84dbafefe065009554,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497345773278848475, guid: 9344e0a0991e6c84dbafefe065009554,
+        type: 3}
+      propertyPath: m_Name
+      value: SOUND_DroneKill
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497345773278848475, guid: 9344e0a0991e6c84dbafefe065009554,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
