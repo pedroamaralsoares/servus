@@ -25,7 +25,6 @@ public class Door : MonoBehaviour
         meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.material = startMaterial;
 
-        StartCoroutine(TriggerWrong());
     }
 
 
@@ -33,11 +32,9 @@ public class Door : MonoBehaviour
     {
         if (opened) {
             transform.position = Vector3.Lerp(transform.position, changePos, 6 * Time.deltaTime);
-            meshRenderer.material = runMaterial;
         }
         else {
             transform.position = Vector3.Lerp(transform.position, defaultPos, 6 * Time.deltaTime);
-            meshRenderer.material = startMaterial;
         }
         
     }
@@ -50,5 +47,16 @@ public class Door : MonoBehaviour
         yield return new WaitForSeconds (1f);
         meshRenderer.material = startMaterial;
 
+    }
+
+    public void ChangeMaterial(bool _opened) {
+        opened = _opened;
+
+        if (opened) {
+            meshRenderer.material = runMaterial;
+        }
+        else {
+            meshRenderer.material = startMaterial;
+        }
     }
 }

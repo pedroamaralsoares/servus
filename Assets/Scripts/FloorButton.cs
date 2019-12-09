@@ -40,6 +40,8 @@ public class FloorButton : MonoBehaviour
 
     void OnTriggerEnter (Collider collider) {
         Trigger(collider);
+        door.StartCoroutine(door.TriggerWrong());
+        StartCoroutine(TriggerWrong());
     }
     void OnTriggerStay(Collider collider)
     {
@@ -49,7 +51,7 @@ public class FloorButton : MonoBehaviour
     void OnTriggerExit() {
         meshRenderer.material = startMaterial;
         activated = false;
-        door.opened = false;
+        door.ChangeMaterial(false);
     }
 
     void Trigger (Collider collider) {
@@ -57,7 +59,17 @@ public class FloorButton : MonoBehaviour
         {
              meshRenderer.material = runMaterial;
              activated = true;
-             door.opened = true;
+             door.ChangeMaterial(true);
         }
+    }
+
+
+    public IEnumerator TriggerWrong()
+    {
+        meshRenderer.material = blockedMaterial;
+        // Also play a sound!
+        yield return new WaitForSeconds (1f);
+        meshRenderer.material = startMaterial;
+
     }
 }
