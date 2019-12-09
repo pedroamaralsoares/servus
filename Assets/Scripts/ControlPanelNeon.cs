@@ -109,8 +109,11 @@ public class ControlPanelNeon : MonoBehaviour
 
                         if (closestDrone != null)
                         {
-                            closestDrone.GetComponent<DroneNavAgent>().playerTarget--;
+                            closestDrone.GetComponent<DroneNavAgent>().tracking = true;
+                            closestDrone.GetComponent<DroneNavAgent>().playerTarget++;
                         }
+
+
                     }
                 }
                 

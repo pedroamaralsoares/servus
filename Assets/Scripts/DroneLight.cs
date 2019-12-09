@@ -55,30 +55,15 @@ public class DroneLight : MonoBehaviour
         Debug.DrawRay(transform.position,fwd*15, Color.green,2);
         if (Physics.Raycast(transform.position, fwd, out hit, 200))
         {
-            //Debug.Log(hit.collider.name);
             if (hit.collider != null && hit.collider.tag == "Player")
             {
                 StartCoroutine(TriggerDeath());
                 
             }
-            //else if (hit.collider != null && trackingNPC)
-            //{
-            //    this.gameObject.GetComponent<Light>().enabled = false;
-            //    StartCoroutine(CheckNPC());
-            //}
+            
         }
     }
 
-    //public IEnumerator CheckNPC()
-    //{
-    //    Debug.Log("YEEET");
-    //    yield return new WaitForSeconds(3f);
-
-    //    // play animation of light
-    //    this.gameObject.GetComponent<Light>().enabled = true;
-    //    // check!
-    //    droneControl.prios.Pop();
-    //}
 
     void SmoothLookAt (Transform target) {
         Vector3 lTargetDir = target.position - transform.position;
