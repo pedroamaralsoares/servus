@@ -21,6 +21,16 @@ public class MoveForward : StateData
             animator.SetBool(CharacterControl.TransitionParameter.Jump.ToString(), true);
         }
 
+        if (c.Grab)
+        {
+            c.CheckForDraggable();
+            if (c.DraggableObject)
+            {
+                animator.SetBool(CharacterControl.TransitionParameter.Grab.ToString(), true);
+                c.DraggableObject.transform.parent = c.transform;
+            }
+        }
+
         if ((c.MoveRight && c.MoveLeft) || (!c.MoveRight && !c.MoveLeft))
         {
             animator.SetBool(CharacterControl.TransitionParameter.Move.ToString(), false);
