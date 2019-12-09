@@ -53,9 +53,5 @@ public class KeyboardInput : MonoBehaviour
                 VirtualInputManager.Instance.MovingObjectRight = false;
             }
         }
-        else
-        {
-            VirtualInputManager.Instance.Grab = false;
-        }
     }
 }

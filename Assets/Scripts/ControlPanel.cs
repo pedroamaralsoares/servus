@@ -79,6 +79,7 @@ public class ControlPanel : MonoBehaviour
             if ((Input.GetKeyDown("q") || Input.GetButtonDown("Fire1")) && sceneryManager != null) {
                 if (!playing && panelsTime <= timeLimit) {
 
+
                     // Play button press sound
                     GetComponent<AudioSource>().Play();
 

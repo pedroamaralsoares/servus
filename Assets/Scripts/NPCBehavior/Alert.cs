@@ -12,7 +12,6 @@ public class Alert : NPCStateData
         NPCControl c = npcState.GetNPCControl(animator);
 
         Instantiate(QuestionMark, new Vector3(c.gameObject.transform.position.x, c.gameObject.transform.position.y + 3f, c.gameObject.transform.position.z), QuestionMark.rotation);
-        Debug.Log("yeet");
 
         GameObject closestDrone = c.FindClosestDrone();
         if (closestDrone != null)

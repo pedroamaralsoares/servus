@@ -43,7 +43,6 @@ public class Walk : NPCStateData
             else
             {
                 c.transform.localPosition = Vector3.MoveTowards(c.transform.localPosition, Waypoint.transform.position, Time.deltaTime * Speed);
-                Debug.Log(c.transform.position);
             }
         }
     }
