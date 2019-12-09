@@ -26,6 +26,9 @@ public class ControlPanelNeon : MonoBehaviour
 
     public NeonCube[] neonCubes;
 
+    public bool triggerDrones;
+    public GameObject[] Drones;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -35,6 +38,10 @@ public class ControlPanelNeon : MonoBehaviour
         playing = false;
 
         audioSource = GetComponent<AudioSource>();
+
+        if(triggerDrones) {
+            Drones = GameObject.FindGameObjectsWithTag("Drone");
+        }
     }
 
     void Update () {
@@ -96,9 +103,37 @@ public class ControlPanelNeon : MonoBehaviour
                         nc.activated = false;
                         nc.SwitchMaterial();
                     }
+
+                    if (triggerDrones) {
+                        GameObject closestDrone = FindClosestDrone();
+
+                        if (closestDrone != null)
+                        {
+                            closestDrone.GetComponent<DroneNavAgent>().playerTarget--;
+                        }
+                    }
                 }
                 
             }
         }
+    }
+
+    public GameObject FindClosestDrone()
+    {
+        GameObject closest = null;
+        Vector3 pos = this.gameObject.transform.position;
+        float distance = Mathf.Infinity;
+        foreach (GameObject drone in Drones)
+        {
+            Vector3 diff = drone.transform.position - pos;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = drone;
+                distance = curDistance;
+            }
+        }
+
+        return closest;
     }
 }
