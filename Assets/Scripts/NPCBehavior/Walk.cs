@@ -42,7 +42,9 @@ public class Walk : NPCStateData
             }
             else
             {
-                c.transform.localPosition = Vector3.MoveTowards(c.transform.localPosition, Waypoint.transform.position, Time.deltaTime * Speed);
+                Vector3 newDirection = Vector3.RotateTowards(c.transform.position, Waypoint.transform.position, 1f, 0.0f);
+                c.transform.LookAt(Waypoint.transform.position);
+                c.transform.position = Vector3.MoveTowards(c.transform.position, Waypoint.transform.position, Time.deltaTime * Speed);
             }
         }
     }
