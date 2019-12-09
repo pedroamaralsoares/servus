@@ -21,7 +21,7 @@ public class VirtualFloor : MonoBehaviour
     {
         latestPlayerPos = new Vector3(0,0,0);
         numClips = clips.Length;
-        panel = GameObject.Find("ControlPanel").GetComponent<ControlPanel>();
+        panel = GameObject.Find("ControlPanel_Rain").GetComponent<ControlPanel>();
     }
 
     // Update is called once per frame
