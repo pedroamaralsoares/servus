@@ -5,8 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New State", menuName = "AbilityData/Idle")]
 public class Idle : StateData
 {
-    public float BlockDistance;
-
     public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
         animator.SetBool(CharacterControl.TransitionParameter.Jump.ToString(), false);
@@ -32,7 +30,7 @@ public class Idle : StateData
 
         if (c.Grab)
         {
-            CheckForDraggable(c);
+            c.CheckForDraggable();
             if (c.DraggableObject)
             {
                 animator.SetBool(CharacterControl.TransitionParameter.Grab.ToString(), true);
@@ -44,23 +42,5 @@ public class Idle : StateData
     public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
 
-    }
-
-    private void CheckForDraggable(CharacterControl control)
-    {
-        foreach (GameObject o in control.FrontSpheres.GetRange(5, 5))
-        {
-            Debug.DrawRay(o.transform.position, control.transform.forward * BlockDistance);
-            RaycastHit hit;
-            if (Physics.Raycast(o.transform.position, control.transform.forward, out hit, BlockDistance))
-            {
-                if (hit.collider.gameObject.tag == "Draggable")
-                {
-                    Debug.Log("Tag");
-                    control.DraggableObject = hit.collider.gameObject;
-                }
-                break;
-            }
-        }
     }
 }

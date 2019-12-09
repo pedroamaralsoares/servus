@@ -46,7 +46,7 @@ public class ManualInput : MonoBehaviour
 
             if (VirtualInputManager.Instance.MovingObjectLeft)
             {
-                if (characterControl.gameObject.transform.rotation.y == 90f)
+                if (characterControl.gameObject.transform.rotation == Quaternion.Euler(0, 90f, 0))
                 {
                     characterControl.Pulling = true;
                     characterControl.Pushing = false;
@@ -59,7 +59,7 @@ public class ManualInput : MonoBehaviour
             }
             else if (VirtualInputManager.Instance.MovingObjectRight)
             {
-                if (characterControl.gameObject.transform.rotation.y == 90f)
+                if (characterControl.gameObject.transform.rotation == Quaternion.Euler(0, 90f, 0))
                 {
                     characterControl.Pushing = true;
                     characterControl.Pulling = false;

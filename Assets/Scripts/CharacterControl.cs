@@ -17,6 +17,8 @@ public class CharacterControl : MonoBehaviour
 
     public Animator animator;
 
+    public float BlockDistance;
+
     public float moveIntensityMultiplier; // between 0 and 1
     public bool MoveRight;
     public bool MoveLeft;
@@ -109,5 +111,25 @@ public class CharacterControl : MonoBehaviour
     {
         GameObject obj = Instantiate(ColliderEdgePrefab, pos, Quaternion.identity);
         return obj;
+    }
+
+    public bool CheckForDraggable()
+    {
+        foreach (GameObject o in FrontSpheres.GetRange(5, 5))
+        {
+            Debug.DrawRay(o.transform.position, transform.forward * BlockDistance);
+            RaycastHit hit;
+            if (Physics.Raycast(o.transform.position, transform.forward, out hit, BlockDistance))
+            {
+                if (hit.collider.gameObject.tag == "Draggable")
+                {
+                    Debug.Log("Tag");
+                    DraggableObject = hit.collider.gameObject;
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }

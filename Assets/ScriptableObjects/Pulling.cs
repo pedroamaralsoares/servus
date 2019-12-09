@@ -14,7 +14,7 @@ public class Pulling : StateData
     {
         CharacterControl c = characterState.GetCharacterControl(animator);
 
-        if (!c.Grab)
+        if (!c.Grab || !c.CheckForDraggable())
         {
             CharacterControl control = characterState.GetCharacterControl(animator);
 
