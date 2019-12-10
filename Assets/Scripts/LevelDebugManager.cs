@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelDebugManager : MonoBehaviour
 {
+    public int nextLevelIndex;
     void Start()
     {
         
@@ -14,7 +15,7 @@ public class LevelDebugManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown("p")) {
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex+1);
+            ChangeLevel(nextLevelIndex);
         }
     }
 

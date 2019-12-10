@@ -41,7 +41,7 @@ public class Door : MonoBehaviour
 
         if (locked) { lightSource.intensity = 0; }
         else {
-            lightSource.intensity = 1.5f;
+            lightSource.intensity = 2.5f;
         }
 
         if (opened) {

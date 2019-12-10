@@ -9,7 +9,7 @@ public class CheckpointEndLevel : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag == "Player") {
+        if (collider.tag == "Player" || collider.tag == "Draggable") {
             levelDebugManager.ChangeLevel(nextLevelIndex);
         }
     }
