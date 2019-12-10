@@ -27,6 +27,12 @@ public class NPCIdle : NPCStateData
         {
             animator.SetBool(NPCControl.TransitionParameter.Float.ToString(), true);
         }
+
+        if (c.CheckForDraggable())
+        {
+            c.Wonder = true; ;
+            animator.SetBool(NPCControl.TransitionParameter.Wonder.ToString(), true);
+        }
     }
 
     public override void OnExit(OtherNPCState npcState, Animator animator, AnimatorStateInfo stateInfo)
