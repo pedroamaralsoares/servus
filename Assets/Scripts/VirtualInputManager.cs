@@ -10,4 +10,5 @@ public class VirtualInputManager : Singleton<VirtualInputManager>
     public bool Grab;
     public bool MovingObjectRight;
     public bool MovingObjectLeft;
+    public bool Rain;
 }

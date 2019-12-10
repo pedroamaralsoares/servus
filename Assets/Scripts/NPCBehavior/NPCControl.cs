@@ -16,12 +16,16 @@ public class NPCControl : MonoBehaviour
 
     public bool Move;
     public bool Wonder;
+    public bool Rain;
     public Transform Waypoint;
 
     public GameObject[] Drones;
     public GameObject ColliderEdgePrefab;
     public List<GameObject> MidSpheres = new List<GameObject>();
     public MeshRenderer LED;
+
+    public GameObject UmbrellaPrefab;
+    private GameObject UmbrellaInstance;
 
     private void Start()
     {
@@ -47,6 +51,26 @@ public class NPCControl : MonoBehaviour
 
         float hSec = (centerRight.transform.position - centerLeft.transform.position).magnitude / 5;
         CreateMiddleSpheres(centerLeft, this.transform.right, hSec, 4, MidSpheres);
+    }
+
+    private void Update()
+    {
+        if (VirtualInputManager.Instance.Rain)
+        {
+            if (!Rain)
+            {
+                UmbrellaInstance = Instantiate(UmbrellaPrefab, this.transform);
+                Rain = true;
+            }
+        }
+        else
+        {
+            if (Rain)
+            {
+                Destroy(UmbrellaInstance);
+                Rain = false;
+            }
+        }
     }
 
     public void CreateMiddleSpheres(GameObject start, Vector3 dir, float sec, int iterations, List<GameObject> spheresList)

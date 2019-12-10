@@ -86,6 +86,8 @@ public class ControlPanel : MonoBehaviour
                     // Play the new scenary's sound
                     sceneryManager.PlayAudio(sceneryClip);
 
+                    VirtualInputManager.Instance.Rain = true;
+
                     foreach (ControlPanel cp in panels)
                     {
                         cp.playing = true;
