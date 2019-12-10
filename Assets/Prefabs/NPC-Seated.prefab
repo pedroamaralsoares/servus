@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3821757881975588146}
   - component: {fileID: 5621005515315848075}
   - component: {fileID: 7313152386536492305}
-  - component: {fileID: 836089424474176997}
   - component: {fileID: 732928525428486254}
   - component: {fileID: 1041828804207495334}
+  - component: {fileID: 7561598393255534383}
   m_Layer: 0
   m_Name: NPC-Seated
   m_TagString: NPC
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2538967415915510437}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.077, y: 7.3, z: 1.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 6939235204986838419}
   m_Father: {fileID: 0}
@@ -82,20 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &836089424474176997
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2538967415915510437}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &732928525428486254
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,8 +114,25 @@ MonoBehaviour:
   Animator: {fileID: 1064853262751281385}
   Move: 0
   Wonder: 0
+  Waypoint: {fileID: 0}
   Drones: []
+  ColliderEdgePrefab: {fileID: 450010103479357747, guid: 5fd177e8a658ced4cb0602140d0dec0e,
+    type: 3}
+  MidSpheres: []
   LED: {fileID: 0}
+--- !u!65 &7561598393255534383
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2538967415915510437}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.28, y: 1.62, z: 0.28}
+  m_Center: {x: 0, y: -0.2, z: 0}
 --- !u!1 &5732064564601960262
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +258,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.958
+      value: -0.989
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
         type: 3}
@@ -305,17 +308,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
         type: 3}

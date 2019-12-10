@@ -41,6 +41,12 @@ public class Walk : NPCStateData
         {
             animator.SetBool(NPCControl.TransitionParameter.Move.ToString(), false);
         }
+
+        if (c.CheckForDraggable())
+        {
+            c.Wonder = true; ;
+            animator.SetBool(NPCControl.TransitionParameter.Wonder.ToString(), true);
+        }
     }
 
     public override void OnExit(OtherNPCState npcState, Animator animator, AnimatorStateInfo stateInfo)

@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 6284114400614422096}
+  BlockDistance: 0
   moveIntensityMultiplier: 0
   MoveRight: 0
   MoveLeft: 0
