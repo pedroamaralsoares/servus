@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 7234c387b8b3eb447b447a4b94f56edf, type: 3}
   m_Name: NPC_Idle
-  m_EditorClassIdentifier: Assembly-CSharp::NPCIdle
+  m_EditorClassIdentifier: 

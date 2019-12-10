@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0da026bb1d831540a165cd3371e2df7, type: 3}
   m_Name: Idle
   m_EditorClassIdentifier: 
-  BlockDistance: 0.5
+  idk: 1

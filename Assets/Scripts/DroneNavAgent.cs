@@ -60,7 +60,7 @@ public class DroneNavAgent : MonoBehaviour
                 tracking = false;
             }
 
-            if (Vector3.Distance(transform.position, targetWaypoint) < 5.5)
+            if (Vector3.Distance(transform.position, targetWaypoint) < 8)
             {
                 droneLight.tracking = true;
                 droneLight.target = target;

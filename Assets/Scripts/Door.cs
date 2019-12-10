@@ -67,7 +67,7 @@ public class Door : MonoBehaviour
 
     public void ChangeMaterial(bool _opened) {
 
-        if (_opened == false && locked) return;
+        if (/*_opened == false &&*/ locked) return;
 
 
         opened = _opened;
