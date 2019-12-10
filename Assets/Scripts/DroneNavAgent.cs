@@ -57,6 +57,7 @@ public class DroneNavAgent : MonoBehaviour
             {
                 target = droneLight.gameObject.transform;
                 targetWaypoint = new Vector3(initialPosition.x, 0, initialPosition.z);
+                tracking = false;
             }
 
             if (Vector3.Distance(transform.position, targetWaypoint) < 5.5)
