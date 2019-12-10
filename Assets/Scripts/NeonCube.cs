@@ -9,6 +9,8 @@ public class NeonCube : MonoBehaviour
     private Rigidbody rigidbody;
     public bool activated;
 
+    public bool domesticated;
+
     private Vector3 initialPosition;
     private Quaternion initialRotation;
     private Vector3 initialScale;
@@ -31,7 +33,7 @@ public class NeonCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (activated) {
+        if (activated && domesticated == false) {
             // no gravity, it will go to its original position/state
             rigidbody.useGravity = false;
             transform.position = Vector3.Lerp(transform.position,initialPosition,6*Time.deltaTime);

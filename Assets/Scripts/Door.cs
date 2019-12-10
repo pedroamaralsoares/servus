@@ -62,8 +62,11 @@ public class Door : MonoBehaviour
 
         if (opened) {
             meshRenderer.material = runMaterial;
-            audioSource.clip = clip_right;
-            audioSource.Play();
+            if (audioSource != null) {
+                audioSource.clip = clip_right;
+                audioSource.Play();
+            }
+            
         }
         else {
             meshRenderer.material = startMaterial;

@@ -26,6 +26,14 @@ public class Grab : StateData
 
             animator.SetBool(CharacterControl.TransitionParameter.Grab.ToString(), false);
         }
+        else {
+            CharacterControl control = characterState.GetCharacterControl(animator);
+
+            if (control.DraggableObject)
+            {
+                control.DraggableObject.GetComponent<NeonCube>().domesticated = true;
+            }
+        }
 
         if (c.Pulling)
         {
