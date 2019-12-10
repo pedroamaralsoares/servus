@@ -17,4 +17,8 @@ public class LevelDebugManager : MonoBehaviour
             SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex+1);
         }
     }
+
+    public void ChangeLevel (int levelIndex) {
+        SceneManager.LoadSceneAsync(levelIndex);
+    }
 }
