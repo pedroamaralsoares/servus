@@ -114,12 +114,15 @@ MonoBehaviour:
   Animator: {fileID: 1064853262751281385}
   Move: 0
   Wonder: 0
+  Rain: 0
   Waypoint: {fileID: 0}
   Drones: []
   ColliderEdgePrefab: {fileID: 450010103479357747, guid: 5fd177e8a658ced4cb0602140d0dec0e,
     type: 3}
   MidSpheres: []
   LED: {fileID: 0}
+  UmbrellaPrefab: {fileID: 16533895413443342, guid: 0a0276750245b1248b02f1d27860f751,
+    type: 3}
 --- !u!65 &7561598393255534383
 BoxCollider:
   m_ObjectHideFlags: 0

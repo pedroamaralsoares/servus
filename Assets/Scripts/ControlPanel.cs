@@ -58,6 +58,7 @@ public class ControlPanel : MonoBehaviour
         else if (locked) {
             meshRenderer.material = blockedMaterial;
             sceneryManager.StopAudio();
+            VirtualInputManager.Instance.Rain = false;
         }
 
         else {
