@@ -26,10 +26,16 @@ public class ControlPanelNeon : MonoBehaviour
 
     public NeonCube[] neonCubes;
     public SleepingCapsule[] sleepingCapsules;
+
+    public Transform[] linesWhileActivated;
+    public Transform[] linesWhileDoorActivated; 
+
     public NPCControl[] npcs;
 
     public bool triggerDrones;
     public GameObject[] Drones;
+
+    public Door door;
 
     void Start()
     {
@@ -43,6 +49,10 @@ public class ControlPanelNeon : MonoBehaviour
 
         if(triggerDrones) {
             Drones = GameObject.FindGameObjectsWithTag("Drone");
+        }
+
+        foreach (Transform line in linesWhileDoorActivated) {
+            line.gameObject.SetActive(false);
         }
     }
 
@@ -70,6 +80,17 @@ public class ControlPanelNeon : MonoBehaviour
                 foreach (SleepingCapsule sc in sleepingCapsules) {
                     sc.activated = true;
                     sc.SwitchMaterial();
+                }
+
+                foreach (Transform line in linesWhileActivated) {
+                    line.gameObject.SetActive(true);
+                }
+                foreach (Transform line in linesWhileDoorActivated) {
+                    line.gameObject.SetActive(false);
+                }
+
+                if (door) {
+                        door.locked = true;
                 }
 
                 panelsTime = 0;
@@ -115,6 +136,18 @@ public class ControlPanelNeon : MonoBehaviour
                         sc.activated = false;
                         sc.SwitchMaterial();
                     }
+
+                    foreach (Transform line in linesWhileActivated) {
+                        line.gameObject.SetActive(false);
+                    }
+                    foreach (Transform line in linesWhileDoorActivated) {
+                        line.gameObject.SetActive(true);
+                    }
+
+                    if (door) {
+                        door.locked = false;
+                    }
+                
 
                     foreach (NPCControl ctrl in npcs)
                     {

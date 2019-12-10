@@ -5,6 +5,8 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
 
+    public bool locked = true;
+    public Light lightSource;
     public bool opened = false;
 
     public Vector3 changePos;
@@ -36,6 +38,12 @@ public class Door : MonoBehaviour
 
     void Update()
     {
+
+        if (locked) { lightSource.intensity = 0; }
+        else {
+            lightSource.intensity = 1.5f;
+        }
+
         if (opened) {
             transform.position = Vector3.Lerp(transform.position, changePos, 6 * Time.deltaTime);
         }
@@ -58,6 +66,10 @@ public class Door : MonoBehaviour
     }
 
     public void ChangeMaterial(bool _opened) {
+
+        if (_opened == false && locked) return;
+
+
         opened = _opened;
 
         if (opened) {

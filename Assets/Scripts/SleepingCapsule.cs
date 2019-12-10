@@ -28,10 +28,12 @@ public class SleepingCapsule : MonoBehaviour
         if (activated) {
             meshRenderer.material = neonMaterial;
             transform.Find("AreaLight").gameObject.SetActive(true);
+            transform.Find("Line").gameObject.SetActive(true);
         }
         else {
             meshRenderer.material = basicMaterial;
             transform.Find("AreaLight").gameObject.SetActive(false);
+            transform.Find("Line").gameObject.SetActive(false);
         }
     }
 }

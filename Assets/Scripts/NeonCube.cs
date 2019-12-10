@@ -18,6 +18,8 @@ public class NeonCube : MonoBehaviour
     public Material basicMaterial;
     public Material neonMaterial;
 
+    public Material domesticatedMaterial;
+
     private MeshRenderer meshRenderer;
 
     public bool canBeDraggable;
@@ -51,6 +53,10 @@ public class NeonCube : MonoBehaviour
                 gameObject.tag = "Draggable";
             }
         }
+
+        if (domesticated) {
+            meshRenderer.material = domesticatedMaterial;
+        }
     }
 
     public void SwitchMaterial () {
@@ -60,5 +66,10 @@ public class NeonCube : MonoBehaviour
         else {
             meshRenderer.material = basicMaterial;
         }
+
+        if (domesticated) {
+            meshRenderer.material = domesticatedMaterial;
+        }
+
     }
 }
