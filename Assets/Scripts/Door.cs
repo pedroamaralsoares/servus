@@ -10,6 +10,10 @@ public class Door : MonoBehaviour
     public Vector3 changePos;
     public Vector3 defaultPos;
 
+    public AudioClip clip_right;
+    public AudioClip clip_wrong;
+    private AudioSource audioSource;
+
 
     public Material runMaterial;
     public Material blockedMaterial;
@@ -24,6 +28,8 @@ public class Door : MonoBehaviour
 
         meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.material = startMaterial;
+
+        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -44,6 +50,8 @@ public class Door : MonoBehaviour
     {
         meshRenderer.material = blockedMaterial;
         // Also play a sound!
+        audioSource.clip = clip_wrong;
+        audioSource.Play();
         yield return new WaitForSeconds (1f);
         meshRenderer.material = startMaterial;
 
@@ -54,9 +62,12 @@ public class Door : MonoBehaviour
 
         if (opened) {
             meshRenderer.material = runMaterial;
+            audioSource.clip = clip_right;
+            audioSource.Play();
         }
         else {
             meshRenderer.material = startMaterial;
         }
+        
     }
 }
