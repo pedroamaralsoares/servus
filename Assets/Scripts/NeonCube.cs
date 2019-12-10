@@ -19,6 +19,8 @@ public class NeonCube : MonoBehaviour
     public Material neonMaterial;
 
     private MeshRenderer meshRenderer;
+
+    public bool canBeDraggable;
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -45,7 +47,9 @@ public class NeonCube : MonoBehaviour
             // no power, gravity impacts. the object will fall; it will be draggable
             rigidbody.useGravity = true;
 
-            gameObject.tag = "Draggable";
+            if (canBeDraggable) {
+                gameObject.tag = "Draggable";
+            }
         }
     }
 

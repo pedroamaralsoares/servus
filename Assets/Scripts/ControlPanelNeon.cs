@@ -25,6 +25,7 @@ public class ControlPanelNeon : MonoBehaviour
     public ControlPanelNeon[] panels;
 
     public NeonCube[] neonCubes;
+    public SleepingCapsule[] sleepingCapsules;
 
     public bool triggerDrones;
     public GameObject[] Drones;
@@ -65,6 +66,11 @@ public class ControlPanelNeon : MonoBehaviour
                     nc.SwitchMaterial();
                 }
 
+                foreach (SleepingCapsule sc in sleepingCapsules) {
+                    sc.activated = true;
+                    sc.SwitchMaterial();
+                }
+
                 panelsTime = 0;
             }
         }
@@ -102,6 +108,11 @@ public class ControlPanelNeon : MonoBehaviour
                     foreach (NeonCube nc in neonCubes) {
                         nc.activated = false;
                         nc.SwitchMaterial();
+                    }
+
+                    foreach (SleepingCapsule sc in sleepingCapsules) {
+                        sc.activated = false;
+                        sc.SwitchMaterial();
                     }
 
                     if (triggerDrones) {
