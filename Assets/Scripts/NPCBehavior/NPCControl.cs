@@ -10,6 +10,7 @@ public class NPCControl : MonoBehaviour
     {
         Move,
         Wonder,
+        Float,
     }
 
     public Animator Animator;
@@ -17,6 +18,7 @@ public class NPCControl : MonoBehaviour
     public bool Move;
     public bool Wonder;
     public bool Rain;
+    public bool Float;
     public Transform Waypoint;
 
     public GameObject[] Drones;

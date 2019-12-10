@@ -26,6 +26,7 @@ public class ControlPanelNeon : MonoBehaviour
 
     public NeonCube[] neonCubes;
     public SleepingCapsule[] sleepingCapsules;
+    public NPCControl[] npcs;
 
     public bool triggerDrones;
     public GameObject[] Drones;
@@ -113,6 +114,11 @@ public class ControlPanelNeon : MonoBehaviour
                     foreach (SleepingCapsule sc in sleepingCapsules) {
                         sc.activated = false;
                         sc.SwitchMaterial();
+                    }
+
+                    foreach (NPCControl ctrl in npcs)
+                    {
+                        ctrl.Float = false;
                     }
 
                     if (triggerDrones) {

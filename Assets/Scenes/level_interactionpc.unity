@@ -443,6 +443,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82816590}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &99568389 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1041828804207495334, guid: 19d347823916fef4fa52b8c82ec1afc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1853909446}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf31de81605885349a2a9482877e569d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &102197341
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,8 +614,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &114500439
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1023,8 +1037,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &231714256
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1813,8 +1829,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &322050860
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2191,6 +2209,8 @@ MonoBehaviour:
   opened: 0
   changePos: {x: 0, y: 0, z: 8}
   defaultPos: {x: 0, y: 0, z: 0}
+  clip_right: {fileID: 0}
+  clip_wrong: {fileID: 0}
   runMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   blockedMaterial: {fileID: 2100000, guid: e123cf33571cf5e479cb8e65045daac3, type: 2}
   startMaterial: {fileID: 2100000, guid: dd21f2ee0cd50014b8e78060581689dd, type: 2}
@@ -2474,8 +2494,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &499435876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2678,8 +2700,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &528254635
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3170,8 +3194,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &566565121
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3281,8 +3307,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &568339268
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3473,7 +3501,7 @@ PrefabInstance:
     - target: {fileID: 3821757881975588146, guid: 19d347823916fef4fa52b8c82ec1afc9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.11
+      value: 15.91
       objectReference: {fileID: 0}
     - target: {fileID: 3821757881975588146, guid: 19d347823916fef4fa52b8c82ec1afc9,
         type: 3}
@@ -3602,8 +3630,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &653489802
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3804,6 +3834,8 @@ MonoBehaviour:
   opened: 0
   changePos: {x: 0, y: 0, z: 8}
   defaultPos: {x: 0, y: 0, z: 0}
+  clip_right: {fileID: 0}
+  clip_wrong: {fileID: 0}
   runMaterial: {fileID: 0}
   blockedMaterial: {fileID: 0}
   startMaterial: {fileID: 0}
@@ -3944,8 +3976,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &687147056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4423,8 +4457,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &748475558
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4923,8 +4959,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 1
 --- !u!1 &930676885
 GameObject:
   m_ObjectHideFlags: 0
@@ -5082,8 +5120,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &933588027
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5193,8 +5233,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &937309491
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5280,6 +5322,8 @@ GameObject:
   - component: {fileID: 949339519}
   - component: {fileID: 949339518}
   - component: {fileID: 949339517}
+  - component: {fileID: 949339522}
+  - component: {fileID: 949339521}
   m_Layer: 0
   m_Name: SleepingCapsule (1)
   m_TagString: Untagged
@@ -5361,6 +5405,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &949339521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949339516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d34e6fa2289f04abf907a1c9750111, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &949339522
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949339516}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 0.14, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &976592738
 GameObject:
   m_ObjectHideFlags: 0
@@ -5539,6 +5608,10 @@ MonoBehaviour:
   - {fileID: 528254634}
   - {fileID: 994245938}
   - {fileID: 2083298034}
+  sleepingCapsules: []
+  npcs:
+  - {fileID: 2117183769}
+  - {fileID: 99568389}
   triggerDrones: 1
   Drones: []
 --- !u!122 &976592742
@@ -5791,8 +5864,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &994245939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6706,8 +6781,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &1156962649
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7828,12 +7905,12 @@ PrefabInstance:
     - target: {fileID: 8990627207839496112, guid: 5b485c9f2daa7c04682ed27cbc3248c2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.35
+      value: -26.26
       objectReference: {fileID: 0}
     - target: {fileID: 8990627207839496112, guid: 5b485c9f2daa7c04682ed27cbc3248c2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.39
+      value: 18.15
       objectReference: {fileID: 0}
     - target: {fileID: 8990627207839496112, guid: 5b485c9f2daa7c04682ed27cbc3248c2,
         type: 3}
@@ -7951,8 +8028,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &1372539095
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8450,8 +8529,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &1514693152
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8575,8 +8656,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &1521885451
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8700,8 +8783,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &1539047282
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8825,8 +8910,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &1571958000
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9059,8 +9146,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &1629372406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9607,8 +9696,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &1714756209
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10261,7 +10352,7 @@ PrefabInstance:
     - target: {fileID: 3821757881975588146, guid: 19d347823916fef4fa52b8c82ec1afc9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.11
+      value: 15.91
       objectReference: {fileID: 0}
     - target: {fileID: 3821757881975588146, guid: 19d347823916fef4fa52b8c82ec1afc9,
         type: 3}
@@ -10404,8 +10495,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &1868980735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10752,6 +10845,8 @@ GameObject:
   - component: {fileID: 1919371119}
   - component: {fileID: 1919371118}
   - component: {fileID: 1919371117}
+  - component: {fileID: 1919371122}
+  - component: {fileID: 1919371121}
   m_Layer: 0
   m_Name: SleepingCapsule
   m_TagString: Untagged
@@ -10833,6 +10928,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1919371121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919371116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d34e6fa2289f04abf907a1c9750111, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1919371122
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919371116}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 0.14, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &1936220220
 GameObject:
   m_ObjectHideFlags: 0
@@ -11300,8 +11420,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &2019921382
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11455,8 +11577,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &2049695063
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11601,8 +11725,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &2061936409
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11805,8 +11931,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &2083298035
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12074,8 +12202,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &2096026182
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12199,8 +12329,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &2104473332
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12260,6 +12392,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104473328}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2117183769 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1041828804207495334, guid: 19d347823916fef4fa52b8c82ec1afc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 592443448}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf31de81605885349a2a9482877e569d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2133264935
 GameObject:
   m_ObjectHideFlags: 0
@@ -12324,8 +12468,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
+  domesticated: 0
   basicMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
+  canBeDraggable: 0
 --- !u!65 &2133264939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12787,6 +12933,8 @@ MonoBehaviour:
   - {fileID: 937309490}
   - {fileID: 653489801}
   - {fileID: 2061936408}
+  sleepingCapsules: []
+  npcs: []
   triggerDrones: 0
   Drones: []
 --- !u!1 &571031125964726064
