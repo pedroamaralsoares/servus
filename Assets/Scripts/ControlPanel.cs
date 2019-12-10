@@ -24,6 +24,8 @@ public class ControlPanel : MonoBehaviour
 
     public ControlPanel[] panels;
 
+    public Transform particlesRain;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -59,6 +61,11 @@ public class ControlPanel : MonoBehaviour
             meshRenderer.material = blockedMaterial;
             sceneryManager.StopAudio();
             VirtualInputManager.Instance.Rain = false;
+
+            if (particlesRain) {
+                Destroy(particlesRain.gameObject);
+            }
+
         }
 
         else {
@@ -94,6 +101,11 @@ public class ControlPanel : MonoBehaviour
                         cp.playing = true;
                         cp.panelUsed = true;
                     }
+
+                    if (particlesRain) {
+                        particlesRain.gameObject.SetActive(true);
+                    }
+                    
                 }
                 
             }
