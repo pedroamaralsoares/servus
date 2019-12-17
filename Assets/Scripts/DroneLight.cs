@@ -57,7 +57,7 @@ public class DroneLight : MonoBehaviour
         {
             if (hit.collider != null && hit.collider.tag == "Player")
             {
-                StartCoroutine(TriggerDeath());
+                //StartCoroutine(TriggerDeath());
                 
             }
             

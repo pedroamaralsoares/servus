@@ -1384,6 +1384,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelDebugManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7324949235138969566, guid: edaf10941002fb74692923ee868db5b8,
+        type: 3}
+      propertyPath: nextLevelIndex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7324949235138969567, guid: edaf10941002fb74692923ee868db5b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1439,11 +1444,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7324949235138969566, guid: edaf10941002fb74692923ee868db5b8,
-        type: 3}
-      propertyPath: nextLevelIndex
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edaf10941002fb74692923ee868db5b8, type: 3}
 --- !u!1001 &451067280
@@ -1457,6 +1457,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Basic Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7283579049795846512, guid: 0aee9f76138019e44b9c68542d3b8e75,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7283579049795846524, guid: 0aee9f76138019e44b9c68542d3b8e75,
         type: 3}

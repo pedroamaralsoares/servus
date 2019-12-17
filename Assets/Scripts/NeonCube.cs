@@ -23,6 +23,11 @@ public class NeonCube : MonoBehaviour
     private MeshRenderer meshRenderer;
 
     public bool canBeDraggable;
+    public bool timeCycle = true;
+
+    public Transform connectionPrefab;
+
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -32,6 +37,19 @@ public class NeonCube : MonoBehaviour
 
         meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.material = neonMaterial;
+    }
+
+    private IEnumerator WaitAndPrint(float waitTime)
+    {
+        timeCycle = false;
+        yield return new WaitForSeconds(waitTime);
+        timeCycle = true;
+        print("Coroutine ended: " + Time.time + " seconds");
+
+        if (connectionPrefab) {
+            Instantiate(connectionPrefab, transform.position, transform.rotation);
+            connectionPrefab.GetComponent<ConnectionPathElement>().target = initialPosition;
+        }
     }
 
     // Update is called once per frame
@@ -44,6 +62,11 @@ public class NeonCube : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation,initialRotation,6*Time.deltaTime);
 
             gameObject.tag = "Untagged";
+
+            if (timeCycle) {
+                StartCoroutine(WaitAndPrint(2));
+            }
+
         }
         else {
             // no power, gravity impacts. the object will fall; it will be draggable

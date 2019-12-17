@@ -515,6 +515,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &114500439
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -939,6 +941,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &231714256
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1744,6 +1748,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &322050860
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2480,6 +2486,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &499435876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2687,6 +2695,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &528254635
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3182,6 +3192,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &566565121
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3296,6 +3308,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &568339268
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3729,6 +3743,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &653489802
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3963,6 +3979,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &687147056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4445,6 +4463,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &748475558
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4949,6 +4969,8 @@ MonoBehaviour:
   domesticatedMaterial: {fileID: 2100000, guid: a923b0c89abd6cf4687030cab03ee9cb,
     type: 2}
   canBeDraggable: 1
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!114 &863391882 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1041828804207495334, guid: 19d347823916fef4fa52b8c82ec1afc9,
@@ -5123,6 +5145,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &933588027
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5311,6 +5335,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &937309491
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5963,6 +5989,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &994245939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6881,6 +6909,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &1156962649
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8053,11 +8083,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8990627207839496113, guid: 5b485c9f2daa7c04682ed27cbc3248c2,
-        type: 3}
-      propertyPath: BlockDistance
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b485c9f2daa7c04682ed27cbc3248c2, type: 3}
 --- !u!1 &1370067712
@@ -8195,6 +8220,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &1372539095
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8696,6 +8723,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &1514693152
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8824,6 +8853,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &1521885451
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9082,6 +9113,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &1539047282
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9210,6 +9243,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &1571958000
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9554,6 +9589,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &1629372406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10105,6 +10142,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &1714756209
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10905,6 +10944,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &1868980735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11880,6 +11921,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &2019921382
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12038,6 +12081,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &2049695063
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12187,6 +12232,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &2061936409
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12394,6 +12441,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &2083298035
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12666,6 +12715,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &2096026182
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12794,6 +12845,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &2104473332
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12922,6 +12975,8 @@ MonoBehaviour:
   neonMaterial: {fileID: 2100000, guid: a311e583b9878484abe00b903009ce2d, type: 2}
   domesticatedMaterial: {fileID: 0}
   canBeDraggable: 0
+  timeCycle: 1
+  connectionPrefab: {fileID: 0}
 --- !u!65 &2133264939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13798,6 +13853,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5199f1de5f87c1e41a6681cd2580eee5, type: 3}
+--- !u!1001 &5357908548907365887
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4957608315339409371, guid: e241f3851c374c54d807c39b40c3fa69,
+        type: 3}
+      propertyPath: m_Name
+      value: ConnectionPathElement
+      objectReference: {fileID: 0}
+    - target: {fileID: 4957608315339409371, guid: e241f3851c374c54d807c39b40c3fa69,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457045981813921542, guid: e241f3851c374c54d807c39b40c3fa69,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -57.346737
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457045981813921542, guid: e241f3851c374c54d807c39b40c3fa69,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 20.094128
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457045981813921542, guid: e241f3851c374c54d807c39b40c3fa69,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.4348046
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457045981813921542, guid: e241f3851c374c54d807c39b40c3fa69,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457045981813921542, guid: e241f3851c374c54d807c39b40c3fa69,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457045981813921542, guid: e241f3851c374c54d807c39b40c3fa69,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457045981813921542, guid: e241f3851c374c54d807c39b40c3fa69,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457045981813921542, guid: e241f3851c374c54d807c39b40c3fa69,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457045981813921542, guid: e241f3851c374c54d807c39b40c3fa69,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457045981813921542, guid: e241f3851c374c54d807c39b40c3fa69,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457045981813921542, guid: e241f3851c374c54d807c39b40c3fa69,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e241f3851c374c54d807c39b40c3fa69, type: 3}
 --- !u!1001 &7283579050506973111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13809,6 +13938,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Basic Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7283579049795846512, guid: 0aee9f76138019e44b9c68542d3b8e75,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7283579049795846524, guid: 0aee9f76138019e44b9c68542d3b8e75,
         type: 3}
