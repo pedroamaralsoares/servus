@@ -13,6 +13,8 @@ public class Idle : StateData
     {
         CharacterControl c = characterState.GetCharacterControl(animator);
 
+        c.playerRigPosZ = 0;
+
         if (c.Jump)
         {
             animator.SetBool(CharacterControl.TransitionParameter.Jump.ToString(), true);

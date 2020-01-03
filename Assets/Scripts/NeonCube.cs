@@ -44,7 +44,6 @@ public class NeonCube : MonoBehaviour
         timeCycle = false;
         yield return new WaitForSeconds(waitTime);
         timeCycle = true;
-        print("Coroutine ended: " + Time.time + " seconds");
 
         if (connectionPrefab) {
             Instantiate(connectionPrefab, transform.position, transform.rotation);

@@ -47,6 +47,10 @@ public class CharacterControl : MonoBehaviour
         }
     }
 
+
+    public Transform playerRig;
+    public float playerRigPosZ = 0;
+
     private void Awake()
     {
         BoxCollider box = GetComponent<BoxCollider>();
@@ -80,6 +84,9 @@ public class CharacterControl : MonoBehaviour
 
         float vSec = (bottomFront.transform.position - topFront.transform.position).magnitude / 10f;
         CreateMiddleSpheres(bottomFront, this.transform.up, vSec, 9, FrontSpheres);
+
+
+        playerRig = transform.Find("player_mixamo_rig");
     }
 
     public void CreateMiddleSpheres(GameObject start, Vector3 dir, float sec, int iterations, List<GameObject> spheresList)
@@ -105,6 +112,8 @@ public class CharacterControl : MonoBehaviour
 
         if (RIGID_BODY.velocity.y > 0.2f && !Jump)
             RIGID_BODY.velocity += (-Vector3.up * PullMultiplier);
+
+        playerRig.localPosition = Vector3.Lerp(playerRig.localPosition, new Vector3(0,-0.46f,playerRigPosZ), 6*Time.deltaTime);
     }
 
     public GameObject CreateEdgeSphere(Vector3 pos)
@@ -123,7 +132,6 @@ public class CharacterControl : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag == "Draggable")
                 {
-                    Debug.Log("Tag");
                     DraggableObject = hit.collider.gameObject;
                     return true;
                 }
