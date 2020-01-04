@@ -417,6 +417,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6284114400614422096, guid: 5b485c9f2daa7c04682ed27cbc3248c2,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 83e6832735fdd4840a016fb92451073e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b485c9f2daa7c04682ed27cbc3248c2, type: 3}
 --- !u!1 &157472163
@@ -1988,6 +1993,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   tracking: 0
+  killing: 0
   trackingNPC: 0
   wrongSoundPrefab: {fileID: 8634890260165206597, guid: 9344e0a0991e6c84dbafefe065009554,
     type: 3}

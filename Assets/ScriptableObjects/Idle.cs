@@ -39,6 +39,10 @@ public class Idle : StateData
                 c.DraggableObject.transform.parent = c.transform;
             }
         }
+
+        if (c.Dying) {
+            animator.SetBool(CharacterControl.TransitionParameter.Dying.ToString(), true);
+        }
     }
 
     public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)

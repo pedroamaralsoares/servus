@@ -34,7 +34,9 @@ public class Grab : StateData
 
             if (control.DraggableObject)
             {
-                control.DraggableObject.GetComponent<NeonCube>().domesticated = true;
+                if (control.DraggableObject.GetComponent<NeonCube>()) {
+                    control.DraggableObject.GetComponent<NeonCube>().domesticated = true;
+                }
 
                 if (!c.Pulling && !c.Pushing) {
 

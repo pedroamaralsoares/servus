@@ -13,6 +13,8 @@ public class CharacterControl : MonoBehaviour
         Grab,
         Pulling,
         Pushing,
+
+        Dying,
     }
 
     public Animator animator;
@@ -26,6 +28,8 @@ public class CharacterControl : MonoBehaviour
     public bool Grab;
     public bool Pushing;
     public bool Pulling;
+    public bool Dying;
+
     public GameObject DraggableObject;
     public GameObject ColliderEdgePrefab;
     public List<GameObject> BottomSpheres = new List<GameObject>();
@@ -114,6 +118,16 @@ public class CharacterControl : MonoBehaviour
             RIGID_BODY.velocity += (-Vector3.up * PullMultiplier);
 
         playerRig.localPosition = Vector3.Lerp(playerRig.localPosition, new Vector3(0,-0.46f,playerRigPosZ), 6*Time.deltaTime);
+
+        if (Input.GetKeyDown("m")) {
+            Dying = true;
+            
+        }
+        if(Dying) {
+            animator.SetBool(CharacterControl.TransitionParameter.Dying.ToString(), true);
+            Dying = false;
+        }
+        
     }
 
     public GameObject CreateEdgeSphere(Vector3 pos)
