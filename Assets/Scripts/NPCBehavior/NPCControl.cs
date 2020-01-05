@@ -146,8 +146,11 @@ public class NPCControl : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag == "Draggable")
                 {
-                    Debug.Log("yeet");
-                    return true;
+                    if (hit.collider.transform.GetComponent<NeonCube>().domesticatedTouched) {
+                        Debug.Log("yeet");
+                        return true;
+                    }
+                    
                 }
             }
         }

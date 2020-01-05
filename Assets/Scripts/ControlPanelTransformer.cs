@@ -22,6 +22,9 @@ public class ControlPanelTransformer : MonoBehaviour
     public Material StartMaterial;
     private MeshRenderer MeshRenderer;
 
+    private int meshTypeNumber = 0;
+    
+
     void Start()
     {  
         PanelsTime = 0;
@@ -29,7 +32,9 @@ public class ControlPanelTransformer : MonoBehaviour
         MeshRenderer.material = StartMaterial;
         Playing = false;
 
-        Modifiable.GetComponent<SkinnedMeshRenderer>().sharedMesh = Meshes[CurrentMesh++ % NoMeshes];
+        meshTypeNumber = CurrentMesh++ % NoMeshes;
+        Modifiable.GetComponent<SkinnedMeshRenderer>().sharedMesh = Meshes[meshTypeNumber];
+        Modifiable.GetComponent<MeshCollider>().sharedMesh = Meshes[meshTypeNumber];
         AudioSource = GetComponent<AudioSource>();
     }
 
@@ -83,7 +88,9 @@ public class ControlPanelTransformer : MonoBehaviour
                     Playing = true;
                     PanelUsed = true;
 
-                    Modifiable.GetComponent<SkinnedMeshRenderer>().sharedMesh = Meshes[CurrentMesh++ % NoMeshes];
+                    meshTypeNumber = CurrentMesh++ % NoMeshes;
+                    Modifiable.GetComponent<SkinnedMeshRenderer>().sharedMesh = Meshes[meshTypeNumber];
+                    Modifiable.GetComponent<MeshCollider>().sharedMesh = Meshes[meshTypeNumber];
                 }
             }
         }
