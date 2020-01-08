@@ -6,6 +6,10 @@ public class NPCAttach : MonoBehaviour
 {
     public int NumberOfNPCs;
     private int Count = 0;
+
+    public TrainMovementPuzzle1 train; // for sound puzzle level
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("NPC"))
@@ -15,6 +19,11 @@ public class NPCAttach : MonoBehaviour
             Animator anim = this.transform.parent.GetComponent<Animator>();
             anim.SetBool("Up", false);
             anim.SetBool("Down", true);
+
+            if(train) {
+                train.endAgain();
+                Debug.Log("Train comethru");
+            }
         }
     }
 
@@ -31,6 +40,8 @@ public class NPCAttach : MonoBehaviour
                 closestDrone.GetComponent<DroneNavAgent>().tracking = true;
                 closestDrone.GetComponent<DroneNavAgent>().npcTargets.Add("npc" + other.gameObject.GetComponent<NPCControl>().ID, other.gameObject.transform);
             }
+
+            
         }
 
         if (Count == NumberOfNPCs)
@@ -39,6 +50,10 @@ public class NPCAttach : MonoBehaviour
             anim.SetBool("Down", false);
             anim.SetBool("Up", true);
             Count = 0;
+
+            
         }
+
+        
     }
 }

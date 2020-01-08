@@ -14,7 +14,6 @@ public class QuestionMark : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         transform.Find("SOUND_DroneTrigger").GetComponent<AudioSource>().Play();
-        Debug.Log("HI");
     }
 
     // Update is called once per frame

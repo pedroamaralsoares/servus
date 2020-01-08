@@ -13,7 +13,7 @@ public class TrainMovementPuzzle1 : MonoBehaviour
 
     void Start()
     {
-        
+        startAgain();
     }
 
     // Update is called once per frame
@@ -27,14 +27,8 @@ public class TrainMovementPuzzle1 : MonoBehaviour
             toPosition = posFinal;
         }
 
-        transform.position = Vector3.Lerp(transform.position, toPosition, 3 * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, toPosition, 2 * Time.deltaTime);
 
-        if(Input.GetKeyDown("i")) {
-            startAgain();
-        }
-        if(Input.GetKeyDown("o")) {
-            endAgain();
-        }
 
     }
 
@@ -45,5 +39,12 @@ public class TrainMovementPuzzle1 : MonoBehaviour
 
     public void endAgain() {
         inStation = false;
+        StartCoroutine(WaitToStart());
+    }
+
+    private IEnumerator WaitToStart()
+    {
+        yield return new WaitForSeconds(1.5f);
+        startAgain();
     }
 }
