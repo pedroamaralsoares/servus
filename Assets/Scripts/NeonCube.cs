@@ -35,6 +35,9 @@ public class NeonCube : MonoBehaviour
     public Transform connectionPrefab;
 
 
+    private Transform myLed;
+
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -49,6 +52,8 @@ public class NeonCube : MonoBehaviour
         randomPosVariation[0] = Random.Range(-0.3f,0.3f);
         randomPosVariation[1] = Random.Range(-0.3f,0.3f);
         randomPosVariation[2] = Random.Range(-0.3f,0.3f);
+
+        myLed = transform.Find("Led");
     }
 
     private IEnumerator WaitAndPrint(float waitTime)
@@ -85,13 +90,17 @@ public class NeonCube : MonoBehaviour
 
             transform.rotation = Quaternion.Lerp(transform.rotation,initialRotation,6*Time.deltaTime);
 
-            transform.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", neonColor *  Mathf.Lerp (0.3f, 1f, Mathf.PingPong(Time.time * 0.5f, 1)));
+            transform.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", neonColor *  Mathf.Lerp (0.3f, 1.75f, Mathf.PingPong(Time.time * 0.5f, 1)));
 
 
             gameObject.tag = "Untagged";
 
             if (timeCycle) {
                 StartCoroutine(WaitAndPrint(2));
+            }
+
+            if (myLed) {
+                myLed.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.white *  Mathf.Lerp (0.4f, 1.75f, Mathf.PingPong(Time.time * 1.5f, 1)));
             }
 
         }
@@ -104,6 +113,10 @@ public class NeonCube : MonoBehaviour
             }
 
             transform.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", neonColor * 0);
+
+            if (myLed) {
+                myLed.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.white * 0);
+            }
             
         }
 
@@ -115,8 +128,11 @@ public class NeonCube : MonoBehaviour
             
             Color lerpedColor = Color.Lerp(domesticatedColor, neonColor, Mathf.PingPong(Time.time * 1f, 1f));
 
-            transform.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", lerpedColor *  Mathf.Lerp (1f, 1f, Mathf.PingPong(Time.time * 0.5f, 1)));
+            transform.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", lerpedColor *  Mathf.Lerp (1f, 1.75f, Mathf.PingPong(Time.time * 0.5f, 1)));
 
+            if (myLed) {
+                myLed.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.white *  Mathf.Lerp (0.4f, 1.75f, Mathf.PingPong(Time.time * 1.5f, 1)));
+            }
 
         }
     }

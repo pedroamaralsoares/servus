@@ -127,13 +127,13 @@ public class NPCControl : MonoBehaviour
 
     public bool CheckForDraggable()
     {
-        int angle = 45;
+        int angle = 55;
         int startAngle = (int)(-angle * 0.5);
         int increment = (int)(angle / MidSpheres.Count);
 
         Vector3 targetPos = Vector3.zero;
 
-        float distance = 15f;
+        float distance = 25f;
 
         RaycastHit hit;
         foreach (GameObject s in MidSpheres)
