@@ -24,7 +24,7 @@ public class KeyboardInput : MonoBehaviour
             VirtualInputManager.Instance.MoveLeft = false;
         }
 
-        if (Input.GetButton("Jump"))
+        if (Input.GetButton("Jump") && !Input.GetKey(KeyCode.W))
         {
             VirtualInputManager.Instance.Jump = true;
         }
