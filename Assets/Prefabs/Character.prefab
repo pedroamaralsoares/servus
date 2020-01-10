@@ -222,13 +222,19 @@ MonoBehaviour:
   Grab: 0
   Pushing: 0
   Pulling: 0
+  Dying: 0
   DraggableObject: {fileID: 0}
   ColliderEdgePrefab: {fileID: 450010103479357747, guid: 5fd177e8a658ced4cb0602140d0dec0e,
     type: 3}
   BottomSpheres: []
   FrontSpheres: []
+  Feet:
+  - {fileID: 7666480789002813778}
+  - {fileID: 6189096007760648236}
   GravityMultiplier: 0
   PullMultiplier: 0
+  playerRig: {fileID: 0}
+  playerRigPosZ: 0
 --- !u!54 &8990627207839496110
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -355,6 +361,18 @@ Transform:
 --- !u!95 &6284114400614422096 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
+    type: 3}
+  m_PrefabInstance: {fileID: 8990627207701794864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7666480789002813778 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7592558355049508510, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
+    type: 3}
+  m_PrefabInstance: {fileID: 8990627207701794864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6189096007760648236 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2963660786538088476, guid: 2f77490b5efdc694a9c7be1d2b1dd827,
     type: 3}
   m_PrefabInstance: {fileID: 8990627207701794864}
   m_PrefabAsset: {fileID: 0}

@@ -34,6 +34,7 @@ public class CharacterControl : MonoBehaviour
     public GameObject ColliderEdgePrefab;
     public List<GameObject> BottomSpheres = new List<GameObject>();
     public List<GameObject> FrontSpheres = new List<GameObject>();
+    public List<Transform> Feet = new List<Transform>();
     public float GravityMultiplier;
     public float PullMultiplier;
 

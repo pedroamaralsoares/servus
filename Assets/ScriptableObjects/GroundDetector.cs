@@ -42,11 +42,11 @@ public class GroundDetector : StateData
         
         if (Mathf.Abs(control.RIGID_BODY.velocity.y) > 0f)
         {
-            foreach (GameObject o in control.BottomSpheres)
+            foreach (Transform o in control.Feet)
             {
                 RaycastHit hit;
-                Debug.DrawRay(o.transform.position, -Vector3.up * Distance, Color.yellow);
-                if (Physics.Raycast(o.transform.position, -Vector3.up, out hit, Distance))
+                Debug.DrawRay(o.position, Vector3.down * Distance, Color.yellow);
+                if (Physics.Raycast(o.position, Vector3.down, out hit, Distance))
                 {
                     Debug.Log("grounded");
                     return true;
