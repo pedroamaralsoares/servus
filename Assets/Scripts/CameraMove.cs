@@ -14,6 +14,8 @@ public class CameraMove : MonoBehaviour
     float yVelocity = 0.0f;
     float newDistance;
 
+    public bool isRotY;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -30,8 +32,15 @@ public class CameraMove : MonoBehaviour
         newDistance = Mathf.SmoothDamp(newDistance, -1f * distance, ref yVelocity, smoothTime);
         //float newDistance = Mathf.Clamp(transform.position.z + 1 * Time.deltaTime, minMyValue, maxMyValue);
 
-        transform.position = Vector3.Lerp(transform.position, new Vector3(target.position.x, target.position.y, newDistance), 3 * Time.deltaTime);
-            
+        if (!isRotY) {
+            transform.position = Vector3.Lerp(transform.position, new Vector3(target.position.x, target.position.y, newDistance), 3 * Time.deltaTime);
+          
+        }
+        else {
+            transform.position = Vector3.Lerp(transform.position, new Vector3(player.position.x - (target.position.x-player.position.x), target.position.y, newDistance), 3 * Time.deltaTime);
+
+        }
+          
     
     }
 }

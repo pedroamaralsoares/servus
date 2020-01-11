@@ -15,6 +15,8 @@ public class Checkpoint : MonoBehaviour
     public Vector3 newOffsetFromFocusPoint = new Vector3(15,0,10);
     public float newDistance;
 
+    public bool fastX;
+
     private float elapsed = 0.0f;
 
     void Start () {
@@ -57,6 +59,9 @@ public class Checkpoint : MonoBehaviour
                 
             gameCamera.GetComponent<CameraMove>().distance = newDistance;
         }
+
+        cameraTarget.GetComponent<CameraTarget>().fastX = fastX;
+        gameCamera.GetComponent<CameraMove>().isRotY = fastX;
     }
 
 }
