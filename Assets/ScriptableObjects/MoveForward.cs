@@ -47,7 +47,7 @@ public class MoveForward : StateData
         }
 
         if (c.MoveLeft)
-        {
+        {  
             c.transform.rotation = Quaternion.Euler(0f, 270f, 0f);
             if (!CheckFront(c))
             {

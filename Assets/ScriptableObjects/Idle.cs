@@ -22,21 +22,24 @@ public class Idle : StateData
 
         if (c.MoveRight)
         {
+            if (c.DraggableObject) 
+                c.DraggableObject.transform.parent = null;
             animator.SetBool(CharacterControl.TransitionParameter.Move.ToString(), true);
         }
 
         if (c.MoveLeft)
         {
+            if (c.DraggableObject)
+                c.DraggableObject.transform.parent = null;
             animator.SetBool(CharacterControl.TransitionParameter.Move.ToString(), true);
         }
 
-        if (c.Grab)
+        if (c.Grab && !c.MoveLeft && !c.MoveRight)
         {
             c.CheckForDraggable();
             if (c.DraggableObject)
             {
                 animator.SetBool(CharacterControl.TransitionParameter.Grab.ToString(), true);
-                c.DraggableObject.transform.parent = c.transform;
             }
         }
 

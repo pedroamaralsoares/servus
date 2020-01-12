@@ -11,6 +11,7 @@ public class WalkTrigger : MonoBehaviour
         if (other.CompareTag("NPC"))
         {
             other.gameObject.GetComponent<NPCControl>().Move = false;
+            other.gameObject.GetComponent<NPCControl>().Float = false;
 
             StartCoroutine(TriggerWalk(other));
         }

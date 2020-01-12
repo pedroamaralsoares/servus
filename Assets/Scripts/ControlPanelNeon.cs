@@ -30,7 +30,7 @@ public class ControlPanelNeon : MonoBehaviour
     public Transform[] linesWhileActivated;
     public Transform[] linesWhileDoorActivated; 
 
-    public NPCControl[] npcs;
+    public Rigidbody[] npcs;
 
     public bool triggerDrones;
     public GameObject[] Drones;
@@ -149,9 +149,9 @@ public class ControlPanelNeon : MonoBehaviour
                     }
                 
 
-                    foreach (NPCControl ctrl in npcs)
+                    foreach (Rigidbody rb in npcs)
                     {
-                        ctrl.Float = false;
+                        rb.useGravity = true;
                     }
 
                     if (triggerDrones) {

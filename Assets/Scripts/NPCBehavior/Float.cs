@@ -14,14 +14,8 @@ public class Float : NPCStateData
     public override void UpdateAbility(OtherNPCState npcState, Animator animator, AnimatorStateInfo stateInfo)
     {
         NPCControl c = npcState.GetNPCControl(animator);
-        
-        if (c.Float)
-        {
-            Vector3 transformPosition = c.transform.position;
-            transformPosition.y = Height;
-            c.transform.position = transformPosition;
-        }
-        else
+
+        if (!c.Float)
         {
             animator.SetBool(NPCControl.TransitionParameter.Float.ToString(), false);
         }

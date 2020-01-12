@@ -32,6 +32,7 @@ public class Pushing : StateData
         }
         else
         {
+            c.DraggableObject.transform.parent = c.transform;
             c.transform.Translate(Vector3.forward * Speed * Time.deltaTime);
         }
     }
