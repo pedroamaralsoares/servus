@@ -677,14 +677,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ea822372a63b64499a17009241fec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameCamera: {fileID: 0}
+  cameraTarget: {fileID: 0}
   FarToCenter: 0
   newOffsetFromFocusPoint: {x: 10, y: 5.5, z: 16}
   newDistance: 16
   fastX: 0
-  isCheckpointPosition: 0
-  inRestartPlayerPositionOffset: {x: 0, y: 0, z: 0}
-  inRestartNewPrefab: {fileID: 0}
-  inRestartNewPrefabPositionOffset: {x: 0, y: 0, z: 0}
+  isCheckpointPosition: 1
+  inRestartPlayerPositionOffset: {x: 5, y: 0, z: 0}
+  inRestartNewPrefab: {fileID: 8633747535015203033, guid: faefcbeb83408984280b9d12485705c1,
+    type: 3}
+  inRestartNewPrefabPositionOffset: {x: 12, y: 0, z: 0}
 --- !u!65 &102197344
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -894,6 +897,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &114500439
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1544,6 +1548,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &231714256
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2057,6 +2062,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ea822372a63b64499a17009241fec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameCamera: {fileID: 0}
+  cameraTarget: {fileID: 0}
   FarToCenter: 0
   newOffsetFromFocusPoint: {x: 10, y: 5.5, z: 16}
   newDistance: 16
@@ -2476,6 +2483,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &322050860
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3531,6 +3539,7 @@ MonoBehaviour:
   canBeDraggable: 1
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &490444429
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3758,6 +3767,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &499435876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4203,6 +4213,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &528254635
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4735,6 +4746,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &566565121
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5164,6 +5176,7 @@ MonoBehaviour:
   canBeDraggable: 1
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &634938079
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5681,6 +5694,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &687147056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5986,6 +6000,7 @@ MonoBehaviour:
   canBeDraggable: 1
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &718855564
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6852,6 +6867,7 @@ MonoBehaviour:
   canBeDraggable: 1
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!1 &876733132
 GameObject:
   m_ObjectHideFlags: 0
@@ -7112,6 +7128,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &933588027
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7803,6 +7820,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &994245939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8962,6 +8980,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &1156962649
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9495,6 +9514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ea822372a63b64499a17009241fec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameCamera: {fileID: 0}
+  cameraTarget: {fileID: 0}
   FarToCenter: 0
   newOffsetFromFocusPoint: {x: 0, y: 2, z: 0}
   newDistance: 10
@@ -9646,6 +9667,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ea822372a63b64499a17009241fec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameCamera: {fileID: 0}
+  cameraTarget: {fileID: 0}
   FarToCenter: 0
   newOffsetFromFocusPoint: {x: 3, y: 4, z: 0}
   newDistance: 8
@@ -11087,6 +11110,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &1372539095
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11688,6 +11712,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &1514693152
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11822,6 +11847,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &1521885451
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12086,6 +12112,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &1539047282
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12220,6 +12247,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &1571958000
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12326,6 +12354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ea822372a63b64499a17009241fec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameCamera: {fileID: 0}
+  cameraTarget: {fileID: 0}
   FarToCenter: 0
   newOffsetFromFocusPoint: {x: 0, y: 2, z: 0}
   newDistance: 0
@@ -12653,6 +12683,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &1629372406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13332,6 +13363,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &1714756209
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13533,15 +13565,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ea822372a63b64499a17009241fec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameCamera: {fileID: 0}
+  cameraTarget: {fileID: 0}
   FarToCenter: 0
   newOffsetFromFocusPoint: {x: 0, y: 2, z: 0}
   newDistance: 10
   fastX: 0
-  isCheckpointPosition: 1
-  inRestartPlayerPositionOffset: {x: 5, y: 0, z: 0}
-  inRestartNewPrefab: {fileID: 8633747535015203033, guid: faefcbeb83408984280b9d12485705c1,
-    type: 3}
-  inRestartNewPrefabPositionOffset: {x: 13, y: 0, z: 0}
+  isCheckpointPosition: 0
+  inRestartPlayerPositionOffset: {x: 0, y: 0, z: 0}
+  inRestartNewPrefab: {fileID: 0}
+  inRestartNewPrefabPositionOffset: {x: 0, y: 0, z: 0}
 --- !u!65 &1729072587
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14237,6 +14270,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &1868980735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14449,6 +14483,7 @@ MonoBehaviour:
   canBeDraggable: 1
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &1874775046
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14769,6 +14804,7 @@ MonoBehaviour:
   canBeDraggable: 1
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &1912104349
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15665,6 +15701,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &2019921382
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15921,6 +15958,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &2049695063
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16233,6 +16271,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &2083298035
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16512,6 +16551,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &2096026182
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16735,6 +16775,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &2104473332
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16947,6 +16988,7 @@ MonoBehaviour:
   canBeDraggable: 0
   timeCycle: 1
   connectionPrefab: {fileID: 0}
+  skinned: 0
 --- !u!65 &2133264939
 BoxCollider:
   m_ObjectHideFlags: 0

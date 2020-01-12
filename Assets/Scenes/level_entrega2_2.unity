@@ -4001,6 +4001,9 @@ MonoBehaviour:
   newDistance: 18
   fastX: 0
   isCheckpointPosition: 0
+  inRestartPlayerPositionOffset: {x: 0, y: 0, z: 0}
+  inRestartNewPrefab: {fileID: 0}
+  inRestartNewPrefabPositionOffset: {x: 0, y: 0, z: 0}
 --- !u!65 &920943196
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6709,6 +6712,9 @@ MonoBehaviour:
   newDistance: 0
   fastX: 0
   isCheckpointPosition: 0
+  inRestartPlayerPositionOffset: {x: 0, y: 0, z: 0}
+  inRestartNewPrefab: {fileID: 0}
+  inRestartNewPrefabPositionOffset: {x: 0, y: 0, z: 0}
 --- !u!65 &1525233802
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7377,6 +7383,9 @@ MonoBehaviour:
   newDistance: 18
   fastX: 0
   isCheckpointPosition: 1
+  inRestartPlayerPositionOffset: {x: 0, y: 0, z: 0}
+  inRestartNewPrefab: {fileID: 0}
+  inRestartNewPrefabPositionOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1711365518
 GameObject:
   m_ObjectHideFlags: 0
@@ -7865,6 +7874,9 @@ MonoBehaviour:
   newDistance: 10
   fastX: 0
   isCheckpointPosition: 0
+  inRestartPlayerPositionOffset: {x: 0, y: 0, z: 0}
+  inRestartNewPrefab: {fileID: 0}
+  inRestartNewPrefabPositionOffset: {x: 0, y: 0, z: 0}
 --- !u!65 &1823458579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13939,7 +13951,7 @@ PrefabInstance:
     - target: {fileID: 1328486625077849068, guid: 25d387e7ac80e5249a0a90f5b3941179,
         type: 3}
       propertyPath: m_Name
-      value: Main Camera_som
+      value: Main Camera
       objectReference: {fileID: 0}
     - target: {fileID: 1328486625077849075, guid: 25d387e7ac80e5249a0a90f5b3941179,
         type: 3}

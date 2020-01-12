@@ -98,6 +98,13 @@ public class CharacterControl : MonoBehaviour
         if (checks.Length > 0)
             transform.position = new Vector3(checks[0].transform.position.x, transform.position.y, transform.position.z);
 
+        // change the camera target & camera positions
+        Transform cameraTarget = GameObject.Find("CameraTarget").transform;
+        Transform camera = GameObject.Find("Main Camera").transform;
+
+        cameraTarget.position = new Vector3(transform.position.x, cameraTarget.position.y, cameraTarget.position.z);
+        camera.position = new Vector3(transform.position.x, camera.position.y, camera.position.z);
+
     }
 
     public void CreateMiddleSpheres(GameObject start, Vector3 dir, float sec, int iterations, List<GameObject> spheresList)

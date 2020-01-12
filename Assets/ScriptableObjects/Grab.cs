@@ -45,7 +45,7 @@ public class Grab : StateData
                     float distToDraggable = Vector3.Distance(control.playerRig.parent.position,control.DraggableObject.transform.position)
                                         - control.DraggableObject.transform.localScale.x
                                         - 1 /*half size of player */;
-                    Debug.Log(distToDraggable);
+                    //Debug.Log(distToDraggable);
                     //0.26f
                     c.playerRigPosZ = (distToDraggable+0.2f)/2;
                 }

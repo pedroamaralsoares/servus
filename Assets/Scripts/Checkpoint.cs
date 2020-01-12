@@ -7,8 +7,8 @@ public class Checkpoint : MonoBehaviour
     // have we been triggered?
     bool triggered;
 
-    Transform gameCamera;
-    Transform cameraTarget;
+    public Transform gameCamera;
+    public Transform cameraTarget;
 
     public bool FarToCenter;
     Transform pointToLook; // where the camera has to focus on in the new area
@@ -56,7 +56,7 @@ public class Checkpoint : MonoBehaviour
             }
         }
     }
-    void Trigger()
+    public void Trigger()
     {
         // Tell the animation controller about our 
         // recent triggering
@@ -80,6 +80,7 @@ public class Checkpoint : MonoBehaviour
                 LevelDebugManager levelDebugManager = GameObject.Find("LevelDebugManager").transform.GetComponent<LevelDebugManager>();
                 levelDebugManager.inRestartNewPrefab = inRestartNewPrefab;
                 levelDebugManager.inRestartNewPrefabPosition = transform.position + inRestartNewPrefabPositionOffset;
+                levelDebugManager.lastCheckpoint = this;
             }
         }
     }

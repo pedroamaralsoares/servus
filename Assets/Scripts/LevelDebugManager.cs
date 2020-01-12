@@ -11,6 +11,8 @@ public class LevelDebugManager : MonoBehaviour
     /* Restart checkpoint - save position & objects */
     public Transform inRestartNewPrefab; // object important for future progression (draggable, for example)
     public Vector3 inRestartNewPrefabPosition;
+
+    public Checkpoint lastCheckpoint;
     /* -------------- */
 
     void Start()
@@ -41,7 +43,7 @@ public class LevelDebugManager : MonoBehaviour
         if (objs.Length > 0) {
 
             if (inRestartNewPrefab) {
-                objs[0].transform.GetComponent<DontDestroy>().InstantiateNewStuff(inRestartNewPrefab, inRestartNewPrefabPosition);
+                objs[0].transform.GetComponent<DontDestroy>().InstantiateNewStuff(inRestartNewPrefab, inRestartNewPrefabPosition, lastCheckpoint);
             }
         }
 
