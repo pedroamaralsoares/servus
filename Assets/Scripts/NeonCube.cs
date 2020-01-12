@@ -28,6 +28,7 @@ public class NeonCube : MonoBehaviour
     public Color domesticatedColor;
 
     private MeshRenderer meshRenderer;
+    private SkinnedMeshRenderer sMeshRenderer;
 
     public bool canBeDraggable;
     public bool timeCycle = true;
@@ -37,6 +38,8 @@ public class NeonCube : MonoBehaviour
 
     private Transform myLed;
 
+    public bool skinned;
+
 
     void Start()
     {
@@ -45,8 +48,16 @@ public class NeonCube : MonoBehaviour
         initialRotation = transform.rotation;
         initialScale = transform.localScale;
 
-        meshRenderer = GetComponent<MeshRenderer>();
-        meshRenderer.material = neonMaterial;
+        if (!skinned)
+        {
+            meshRenderer = GetComponent<MeshRenderer>();
+            meshRenderer.material = neonMaterial;
+        }
+        else
+        {
+            sMeshRenderer = GetComponent<SkinnedMeshRenderer>();
+            sMeshRenderer.material = neonMaterial;
+        }
 
         randomPosVariation = new float[3];
         randomPosVariation[0] = Random.Range(-0.3f,0.3f);
@@ -90,8 +101,10 @@ public class NeonCube : MonoBehaviour
 
             transform.rotation = Quaternion.Lerp(transform.rotation,initialRotation,6*Time.deltaTime);
 
-            transform.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", neonColor *  Mathf.Lerp (0.3f, 1.75f, Mathf.PingPong(Time.time * 0.5f, 1)));
-
+            if (!skinned)
+                transform.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", neonColor *  Mathf.Lerp (0.3f, 1.75f, Mathf.PingPong(Time.time * 0.5f, 1)));
+            else
+                transform.GetComponent<SkinnedMeshRenderer>().material.SetColor("_EmissionColor", neonColor * Mathf.Lerp(0.3f, 1.75f, Mathf.PingPong(Time.time * 0.5f, 1)));
 
             gameObject.tag = "Untagged";
 
@@ -99,10 +112,15 @@ public class NeonCube : MonoBehaviour
                 StartCoroutine(WaitAndPrint(2));
             }
 
-            if (myLed) {
-                myLed.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.white *  Mathf.Lerp (0.4f, 1.75f, Mathf.PingPong(Time.time * 1.5f, 1)));
-            }
-
+            if (myLed)
+                if (!skinned)
+                {
+                    myLed.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.white * Mathf.Lerp(0.4f, 1.75f, Mathf.PingPong(Time.time * 1.5f, 1)));
+                }
+                else
+                {
+                    myLed.GetComponent<SkinnedMeshRenderer>().material.SetColor("_EmissionColor", Color.white * Mathf.Lerp(0.4f, 1.75f, Mathf.PingPong(Time.time * 1.5f, 1)));
+                }
         }
         else {
             // no power, gravity impacts. the object will fall; it will be draggable
@@ -112,12 +130,25 @@ public class NeonCube : MonoBehaviour
                 gameObject.tag = "Draggable";
             }
 
-            transform.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", neonColor * 0);
+            if (!skinned)
+            {
+                transform.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", neonColor * 0);
 
-            if (myLed) {
-                myLed.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.white * 0);
+                if (myLed)
+                {
+                    myLed.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.white * 0);
+                }
             }
-            
+
+            else
+            {
+                transform.GetComponent<SkinnedMeshRenderer>().material.SetColor("_EmissionColor", neonColor * 0);
+
+                if (myLed)
+                {
+                    myLed.GetComponent<SkinnedMeshRenderer>().material.SetColor("_EmissionColor", Color.white * 0);
+                }
+            }
         }
 
         if (transform.parent == null) {
@@ -125,13 +156,25 @@ public class NeonCube : MonoBehaviour
         }
 
         if (domesticated && domesticatedTouched) {
-            
+
             Color lerpedColor = Color.Lerp(domesticatedColor, neonColor, Mathf.PingPong(Time.time * 1f, 1f));
 
-            transform.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", lerpedColor *  Mathf.Lerp (1f, 1.75f, Mathf.PingPong(Time.time * 0.5f, 1)));
+            if (!skinned) 
 
-            if (myLed) {
-                myLed.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.white *  Mathf.Lerp (0.4f, 1.75f, Mathf.PingPong(Time.time * 1.5f, 1)));
+                transform.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", lerpedColor *  Mathf.Lerp (1f, 1.75f, Mathf.PingPong(Time.time * 0.5f, 1)));
+
+                if (myLed) {
+                    myLed.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.white *  Mathf.Lerp (0.4f, 1.75f, Mathf.PingPong(Time.time * 1.5f, 1)));
+                }
+
+            else
+            {
+                transform.GetComponent<SkinnedMeshRenderer>().material.SetColor("_EmissionColor", lerpedColor * Mathf.Lerp(1f, 1.75f, Mathf.PingPong(Time.time * 0.5f, 1)));
+
+                if (myLed)
+                {
+                    myLed.GetComponent<SkinnedMeshRenderer>().material.SetColor("_EmissionColor", Color.white * Mathf.Lerp(0.4f, 1.75f, Mathf.PingPong(Time.time * 1.5f, 1)));
+                }
             }
 
         }
@@ -140,7 +183,10 @@ public class NeonCube : MonoBehaviour
     public void SwitchMaterial () {
 
         if (activated) {
-            meshRenderer.material = neonMaterial;
+            if (!skinned)
+                meshRenderer.material = neonMaterial;
+            else
+                sMeshRenderer.material = neonMaterial;
         }
         /*
         else if (domesticated) {
