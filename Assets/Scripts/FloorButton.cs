@@ -59,6 +59,7 @@ public class FloorButton : MonoBehaviour
 
         if (collider.gameObject.tag == "Draggable" && collider.transform.GetComponent<NeonCube>().domesticated)
         {
+            Debug.Log("yeet");
              meshRenderer.material = runMaterial;
              activated = true;
              door.ChangeMaterial(true);

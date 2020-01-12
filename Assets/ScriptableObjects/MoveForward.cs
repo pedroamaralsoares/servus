@@ -63,7 +63,7 @@ public class MoveForward : StateData
 
     private bool CheckFront(CharacterControl control)
     {
-        foreach (GameObject o in control.FrontSpheres)
+        foreach (GameObject o in control.FrontSpheres.GetRange(5, 5))
         {
             RaycastHit hit;
             if (Physics.Raycast(o.transform.position, control.transform.forward, out hit, BlockDistance))
