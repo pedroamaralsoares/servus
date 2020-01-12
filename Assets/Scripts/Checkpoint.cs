@@ -17,6 +17,15 @@ public class Checkpoint : MonoBehaviour
 
     public bool fastX;
 
+
+    /* Restart checkpoint - save position & objects */
+    public bool isCheckpointPosition;
+    public Vector3 inRestartPlayerPositionOffset;
+    public Transform inRestartNewPrefab; // object important for future progression (draggable, for example)
+    public Vector3 inRestartNewPrefabPositionOffset;
+
+    /* -------------- */
+
     private float elapsed = 0.0f;
 
     void Start () {
@@ -62,6 +71,17 @@ public class Checkpoint : MonoBehaviour
 
         cameraTarget.GetComponent<CameraTarget>().fastX = fastX;
         gameCamera.GetComponent<CameraMove>().isRotY = fastX;
+
+        if (isCheckpointPosition) {
+            GameObject[] objs = GameObject.FindGameObjectsWithTag("checkpoint_pos");
+            objs[0].transform.position = new Vector3(transform.position.x + inRestartPlayerPositionOffset.x, objs[0].transform.position.y, objs[0].transform.position.z);
+
+            if (GameObject.Find("LevelDebugManager")) {
+                LevelDebugManager levelDebugManager = GameObject.Find("LevelDebugManager").transform.GetComponent<LevelDebugManager>();
+                levelDebugManager.inRestartNewPrefab = inRestartNewPrefab;
+                levelDebugManager.inRestartNewPrefabPosition = transform.position + inRestartNewPrefabPositionOffset;
+            }
+        }
     }
 
 }

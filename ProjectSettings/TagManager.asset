@@ -8,6 +8,8 @@ TagManager:
   - NPC
   - Drone
   - ControlPanel
+  - Draggable
+  - checkpoint_pos
   layers:
   - Default
   - TransparentFX

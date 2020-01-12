@@ -92,6 +92,12 @@ public class CharacterControl : MonoBehaviour
 
 
         playerRig = transform.Find("player_mixamo_rig");
+
+        // change the start position of the player
+        GameObject[] checks = GameObject.FindGameObjectsWithTag("checkpoint_pos");
+        if (checks.Length > 0)
+            transform.position = new Vector3(checks[0].transform.position.x, transform.position.y, transform.position.z);
+
     }
 
     public void CreateMiddleSpheres(GameObject start, Vector3 dir, float sec, int iterations, List<GameObject> spheresList)

@@ -42,7 +42,8 @@ public class DroneSimpleLight2 : MonoBehaviour
 
         /* Wait 2 seconds until we restart the level */
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        LevelDebugManager levelDebugManager = GameObject.Find("LevelDebugManager").transform.GetComponent<LevelDebugManager>();
+        levelDebugManager.Death();
     }
 
     void Update()
