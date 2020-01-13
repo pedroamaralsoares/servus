@@ -13936,7 +13936,6 @@ GameObject:
   - component: {fileID: 734383339}
   - component: {fileID: 734383337}
   - component: {fileID: 734383338}
-  - component: {fileID: 734383336}
   - component: {fileID: 734383340}
   - component: {fileID: 734383341}
   - component: {fileID: 734383342}
@@ -13947,19 +13946,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &734383336
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 734383335}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &734383337
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -14086,7 +14072,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!1 &736746843
 GameObject:
