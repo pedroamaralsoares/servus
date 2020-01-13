@@ -52,7 +52,7 @@ public class DroneSimpleLight2 : MonoBehaviour
         //transform.LookAt(target);
         
 
-        fwd = transform.TransformDirection(Vector3.forward);
+        fwd = transform.TransformDirection(Vector3.forward) * 5f;
 
         if (killing) return;
 
@@ -60,7 +60,7 @@ public class DroneSimpleLight2 : MonoBehaviour
 
         
 
-        if (Physics.SphereCast(transform.position, 10.5f, fwd, out hit, 17))
+        if (Physics.SphereCast(transform.position, 11f, fwd, out hit, 17))
         {
             currentHitDistance = hit.distance;
 
@@ -84,7 +84,7 @@ public class DroneSimpleLight2 : MonoBehaviour
     private void OnDrawGizmosSelected () {
         Gizmos.color = Color.red;
             Debug.DrawLine(transform.position, fwd * currentHitDistance);
-            Gizmos.DrawWireSphere(transform.position + fwd * currentHitDistance,10.5f);
+            Gizmos.DrawWireSphere(transform.position + fwd * currentHitDistance,11f);
     }
 
 }

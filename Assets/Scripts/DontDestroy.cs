@@ -5,6 +5,8 @@ using UnityEngine;
 public class DontDestroy : MonoBehaviour
 {
 
+    Checkpoint savedCheckpointVirtual;
+
     void Awake()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("checkpoint_pos");
@@ -27,13 +29,20 @@ public class DontDestroy : MonoBehaviour
     public IEnumerator InstantiateNewStuffTimed(Transform inRestartNewPrefab, Vector3 inRestartNewPrefabPosition, Checkpoint checkpoint)
     {
         /* change camera parameters - like Trigger() from Checkpoint.cs */
+
+        if (checkpoint) {
+            savedCheckpointVirtual = new Checkpoint();
+            savedCheckpointVirtual.newOffsetFromFocusPoint = checkpoint.newOffsetFromFocusPoint;
+            savedCheckpointVirtual.newDistance = checkpoint.newDistance;
+            savedCheckpointVirtual.fastX = checkpoint.fastX;
+        }
         
-        var newOffsetFromFocusPoint = checkpoint.newOffsetFromFocusPoint;
-        var newDistance = checkpoint.newDistance;
-        var fastX = checkpoint.fastX;
+        var newOffsetFromFocusPoint = savedCheckpointVirtual.newOffsetFromFocusPoint;
+        var newDistance = savedCheckpointVirtual.newDistance;
+        var fastX = savedCheckpointVirtual.fastX;
         /* ====================================== */
 
-        yield return new WaitForSeconds (0.6f);
+        yield return new WaitForSeconds (1f);
         var inst = Instantiate(inRestartNewPrefab);
         inst.position = new Vector3(inRestartNewPrefabPosition.x,GameObject.Find("Character").transform.position.y,GameObject.Find("Character").transform.position.z);
         

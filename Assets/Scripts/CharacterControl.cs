@@ -133,10 +133,13 @@ public class CharacterControl : MonoBehaviour
 
         playerRig.localPosition = Vector3.Lerp(playerRig.localPosition, new Vector3(0,-0.46f,playerRigPosZ), 6*Time.deltaTime);
 
-        if (Input.GetKeyDown("m")) {
-            Dying = true;
-            
+        
+        if (transform.position.y < 0) {
+            LevelDebugManager levelDebugManager = GameObject.Find("LevelDebugManager").transform.GetComponent<LevelDebugManager>();
+            levelDebugManager.Death();
         }
+        
+
         if(Dying) {
             animator.SetBool(CharacterControl.TransitionParameter.Dying.ToString(), true);
             Dying = false;
