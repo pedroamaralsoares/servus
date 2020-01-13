@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class ControlPanelLift : MonoBehaviour
 {
-
     public Transform Lift;
     public GameObject[] npcs;
 
     public SceneryManager sceneryManager;
     public AudioClip sceneryClip;
 
-    private AudioSource audioSource;
-    public float timeLimit = 3f;
+    private AudioSource[] audioSources;
 
     public bool panelUsed;
 
@@ -30,7 +28,7 @@ public class ControlPanelLift : MonoBehaviour
         meshRenderer.material = startMaterial;
         playing = false;
 
-        audioSource = GetComponent<AudioSource>();
+        audioSources = GetComponents<AudioSource>();
     }
 
     void Update()
@@ -40,13 +38,6 @@ public class ControlPanelLift : MonoBehaviour
             if (panelUsed) panelsTime += Time.deltaTime;
 
             meshRenderer.material = runMaterial;
-
-            if (panelsTime > timeLimit)
-            {
-                playing = false;
-                panelUsed = false;
-                panelsTime = 0;
-            }
 
             Lift.gameObject.GetComponent<Lift>().canMove = true;
             foreach (GameObject npc in npcs)
@@ -81,13 +72,17 @@ public class ControlPanelLift : MonoBehaviour
         {
             if ((Input.GetKeyDown("q") || Input.GetButtonDown("Fire1")) && sceneryManager != null)
             {
-                if (!playing && panelsTime <= timeLimit)
+                if (!playing)
                 {
 
                     // Play button press sound
-                    audioSource.pitch = 3;
-                    audioSource.volume = 1;
-                    GetComponent<AudioSource>().Play();
+                    audioSources[0].pitch = 3;
+                    audioSources[0].volume = 1;
+                    audioSources[0].Play();
+
+                    audioSources[1].pitch = 1;
+                    audioSources[1].volume = 0.2f;
+                    audioSources[1].Play();
 
                     playing = true;
                     panelUsed = true;
