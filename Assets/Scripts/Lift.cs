@@ -15,9 +15,25 @@ public class Lift : MonoBehaviour
     public Material regularGrid;
     public Material neonGrid;
 
+
+    public Transform[] linesWhileActivated;
+    public Transform[] linesWhileDoorActivated; 
+
+
+    public AudioSource audioSource;
+
     public void Start()
     {
         oldHeight = transform.position.y;
+
+        foreach (Transform line in linesWhileActivated) {
+            line.gameObject.SetActive(false);
+        }
+        foreach (Transform line in linesWhileDoorActivated) {
+            line.gameObject.SetActive(true);
+        }
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Update()
@@ -48,24 +64,46 @@ public class Lift : MonoBehaviour
                 }
 
             }
+
+            foreach (Transform line in linesWhileActivated) {
+                line.gameObject.SetActive(true);
+            }
+            foreach (Transform line in linesWhileDoorActivated) {
+                line.gameObject.SetActive(false);
+            }
+            
         }
 
         else {
             transform.GetComponent<MeshRenderer>().material = regularGrid;
+
+
+            foreach (Transform line in linesWhileActivated) {
+            line.gameObject.SetActive(false);
+            }
+            foreach (Transform line in linesWhileDoorActivated) {
+                line.gameObject.SetActive(true);
+            }
         }
     }
 
     private IEnumerator MoveUp()
     {
+        audioSource.Stop();
         yield return new WaitForSeconds(3f);
         back = false;
         move = true;
+        if (!audioSource.isPlaying)
+            audioSource.Play();
     }
 
     private IEnumerator MoveDown()
     {
+        audioSource.Stop();
         yield return new WaitForSeconds(3f);
         back = true;
         move = false;
+        if (!audioSource.isPlaying)
+            audioSource.Play();
     }
 }
