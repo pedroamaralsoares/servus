@@ -39,11 +39,14 @@ public class ControlPanelLift : MonoBehaviour
 
             meshRenderer.material = runMaterial;
 
-            Lift.gameObject.GetComponent<Lift>().canMove = true;
-            foreach (GameObject npc in npcs)
+            if (!audioSources[1].isPlaying)
+            {
+                Lift.gameObject.GetComponent<Lift>().canMove = true;
+                foreach (GameObject npc in npcs)
                 {
                     npc.GetComponentInChildren<Animator>().SetBool("Running", true);
                 }
+            }
         }
 
         else
