@@ -12,6 +12,9 @@ public class Lift : MonoBehaviour
     private bool back = false;
     public bool canMove = false;
 
+    public Material regularGrid;
+    public Material neonGrid;
+
     public void Start()
     {
         oldHeight = transform.position.y;
@@ -21,6 +24,8 @@ public class Lift : MonoBehaviour
     {
         if (canMove)
         {
+            transform.GetComponent<MeshRenderer>().material = neonGrid;
+
             if (move)
             {
                 float step = speed * Time.deltaTime;
@@ -44,6 +49,10 @@ public class Lift : MonoBehaviour
 
             }
         }
+
+        else {
+            transform.GetComponent<MeshRenderer>().material = regularGrid;
+        }
     }
 
     private IEnumerator MoveUp()
@@ -60,16 +69,27 @@ public class Lift : MonoBehaviour
         move = false;
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (canMove)
-    //    {
-    //        if (collision.gameObject.tag == "Draggable")
-    //        {
-    //            StartCoroutine(OnTrigger(collision));
-    //        }
-    //    }
-    //}
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+            if (collision.gameObject.tag == "Draggable" || collision.gameObject.tag == "Player")
+            {
+                //StartCoroutine(OnTrigger(collision));
+                collision.gameObject.transform.parent = transform;
+            }
+        
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        
+            if (collision.gameObject.tag == "Draggable" || collision.gameObject.tag == "Player")
+            {
+                //StartCoroutine(OnTrigger(collision));
+                collision.gameObject.transform.parent = transform;
+            }
+        
+    }
+
 
     //private IEnumerator OnTrigger(Collision collision)
     //{
@@ -79,16 +99,16 @@ public class Lift : MonoBehaviour
     //    collision.gameObject.transform.parent = transform;
     //}
 
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    if (canMove)
-    //    {
-    //        if (collision.gameObject.tag == "Draggable")
-    //        {
-    //            StartCoroutine(OffTrigger(collision));
-    //        }
-    //    }
-    //}
+    private void OnCollisionExit(Collision collision)
+    {
+        
+            if (collision.gameObject.tag == "Draggable" || collision.gameObject.tag == "Player")
+            {
+                //StartCoroutine(OffTrigger(collision));
+                collision.gameObject.transform.parent = null;
+            }
+        
+    }
 
     //private IEnumerator OffTrigger(Collision collision)
     //{
