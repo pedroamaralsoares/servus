@@ -134,7 +134,7 @@ public class CharacterControl : MonoBehaviour
         playerRig.localPosition = Vector3.Lerp(playerRig.localPosition, new Vector3(0,-0.46f,playerRigPosZ), 6*Time.deltaTime);
 
         
-        if (transform.position.y < 0) {
+        if (transform.position.y < -10) {
             LevelDebugManager levelDebugManager = GameObject.Find("LevelDebugManager").transform.GetComponent<LevelDebugManager>();
             levelDebugManager.Death();
         }

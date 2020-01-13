@@ -6,6 +6,8 @@ public class ControlPanelTransformer : MonoBehaviour
 {
     public GameObject Modifiable;
     public Mesh[] Meshes;
+    public Vector3[] Sizes;
+
     public int NoMeshes;
     public int CurrentMesh = 0;
 
@@ -20,16 +22,21 @@ public class ControlPanelTransformer : MonoBehaviour
 
     public Material RunMaterial;
     public Material StartMaterial;
+
+    public Material turnedOffMaterial;
+
     private MeshRenderer MeshRenderer;
 
     private int meshTypeNumber = 0;
+
+    public bool unlocked = false;
     
 
     void Start()
     {  
         PanelsTime = 0;
         MeshRenderer = GetComponent<MeshRenderer>();
-        MeshRenderer.material = StartMaterial;
+        MeshRenderer.material = turnedOffMaterial;
         Playing = false;
 
         meshTypeNumber = CurrentMesh++ % NoMeshes;
@@ -59,9 +66,13 @@ public class ControlPanelTransformer : MonoBehaviour
             }
         }
 
-        else
+        else if (unlocked)
         {
             MeshRenderer.material = StartMaterial;
+        }
+
+        else {
+            MeshRenderer.material = turnedOffMaterial;
         }
     }
     void OnTriggerEnter(Collider collider)
@@ -75,6 +86,8 @@ public class ControlPanelTransformer : MonoBehaviour
 
     void Trigger(Collider collider)
     {
+        if (!unlocked) return;
+
         if (collider.gameObject.tag == "Player")
         {
             if ((Input.GetKeyDown("q") || Input.GetButtonDown("Fire1")) && SceneryManager != null)
@@ -91,6 +104,7 @@ public class ControlPanelTransformer : MonoBehaviour
                     meshTypeNumber = CurrentMesh++ % NoMeshes;
                     Modifiable.GetComponent<SkinnedMeshRenderer>().sharedMesh = Meshes[meshTypeNumber];
                     Modifiable.GetComponent<MeshCollider>().sharedMesh = Meshes[meshTypeNumber];
+                    Modifiable.transform.localScale = Sizes[meshTypeNumber];
                 }
             }
         }
