@@ -49,7 +49,6 @@ public class ControlPanelLift : MonoBehaviour
             }
 
             Lift.gameObject.GetComponent<Lift>().canMove = true;
-
             foreach (GameObject npc in npcs)
                 {
                     npc.GetComponentInChildren<Animator>().SetBool("Running", true);
