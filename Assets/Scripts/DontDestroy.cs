@@ -42,7 +42,7 @@ public class DontDestroy : MonoBehaviour
         var fastX = savedCheckpointVirtual.fastX;
         /* ====================================== */
 
-        yield return new WaitForSeconds (1f);
+        yield return new WaitForSeconds (2f);
         var inst = Instantiate(inRestartNewPrefab);
         inst.position = new Vector3(inRestartNewPrefabPosition.x,GameObject.Find("Character").transform.position.y,GameObject.Find("Character").transform.position.z);
         

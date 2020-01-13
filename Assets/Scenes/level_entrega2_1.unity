@@ -4469,7 +4469,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: 0.064740695, y: -0, z: -0, w: 0.99790215}
-  m_LocalPosition: {x: -61.93, y: 14.7, z: -10}
+  m_LocalPosition: {x: -30.96, y: 14.7, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4510,11 +4510,11 @@ MonoBehaviour:
   focus:
     transform: {fileID: 1392735368}
     focusPlane: 12.052865
-    range: 13.300001
-    nearPlane: 5.4028645
+    range: 20.9
+    nearPlane: 1.6028652
     nearFalloff: 8.21
-    farPlane: 18.702866
-    farFalloff: 39.37
+    farPlane: 22.502865
+    farFalloff: 39.2
     nearBlurRadius: 10
     farBlurRadius: 16.8
   bokehTexture:
@@ -18316,6 +18316,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Basic Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7283579049795846512, guid: 0aee9f76138019e44b9c68542d3b8e75,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7283579049795846524, guid: 0aee9f76138019e44b9c68542d3b8e75,
         type: 3}

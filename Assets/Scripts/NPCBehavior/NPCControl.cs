@@ -133,7 +133,7 @@ public class NPCControl : MonoBehaviour
 
         Vector3 targetPos = Vector3.zero;
 
-        float distance = 25f;
+        float distance = 40;
 
         RaycastHit hit;
         foreach (GameObject s in MidSpheres)
