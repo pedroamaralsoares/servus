@@ -39,7 +39,7 @@ public class ControlPanelLift : MonoBehaviour
 
             meshRenderer.material = runMaterial;
 
-            if (!audioSources[1].isPlaying)
+            if (panelsTime > 1)
             {
                 Lift.gameObject.GetComponent<Lift>().canMove = true;
                 foreach (GameObject npc in npcs)
@@ -89,6 +89,8 @@ public class ControlPanelLift : MonoBehaviour
 
                     playing = true;
                     panelUsed = true;
+
+                    panelsTime = 0;
                 }
             }
 

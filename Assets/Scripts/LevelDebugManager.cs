@@ -71,6 +71,7 @@ public class LevelDebugManager : MonoBehaviour
             yield return null;
         }
 
+        yield return new WaitForSeconds (1.2f);
         SceneManager.LoadSceneAsync(levelIndex);
  
     }
