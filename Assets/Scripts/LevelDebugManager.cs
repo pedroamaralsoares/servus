@@ -57,10 +57,17 @@ public class LevelDebugManager : MonoBehaviour
         float delay = 1f;
         float elapsedTime = 0;
         float currentVolume = AudioListener.volume;
+
+        if (GameObject.Find("Basic Canvas")) {
+            Animator canvasImageAnimator = GameObject.Find("Basic Canvas").transform.Find("Image").GetComponent<Animator>();
+            canvasImageAnimator.SetBool("Dying",true);
+        }
+        
  
         while(elapsedTime < delay) {
             elapsedTime += Time.deltaTime*2.5f;
             AudioListener.volume = Mathf.Lerp(currentVolume, 0, elapsedTime / delay);
+            
             yield return null;
         }
 

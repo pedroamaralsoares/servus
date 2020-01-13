@@ -2097,7 +2097,7 @@ PrefabInstance:
     - target: {fileID: 7283579049795846512, guid: 0aee9f76138019e44b9c68542d3b8e75,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7283579049795846524, guid: 0aee9f76138019e44b9c68542d3b8e75,
         type: 3}
@@ -3996,6 +3996,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ea822372a63b64499a17009241fec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameCamera: {fileID: 0}
+  cameraTarget: {fileID: 0}
   FarToCenter: 0
   newOffsetFromFocusPoint: {x: 19, y: 4, z: 10}
   newDistance: 18
@@ -6707,6 +6709,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ea822372a63b64499a17009241fec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameCamera: {fileID: 0}
+  cameraTarget: {fileID: 0}
   FarToCenter: 0
   newOffsetFromFocusPoint: {x: 0, y: 0, z: 0}
   newDistance: 0
@@ -7378,6 +7382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ea822372a63b64499a17009241fec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameCamera: {fileID: 0}
+  cameraTarget: {fileID: 0}
   FarToCenter: 0
   newOffsetFromFocusPoint: {x: 19, y: 4, z: 10}
   newDistance: 18
@@ -7869,6 +7875,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ea822372a63b64499a17009241fec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameCamera: {fileID: 0}
+  cameraTarget: {fileID: 0}
   FarToCenter: 0
   newOffsetFromFocusPoint: {x: 7, y: 4, z: 10}
   newDistance: 10

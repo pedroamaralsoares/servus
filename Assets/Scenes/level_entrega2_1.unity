@@ -18666,11 +18666,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basic Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7283579049795846512, guid: 0aee9f76138019e44b9c68542d3b8e75,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7283579049795846524, guid: 0aee9f76138019e44b9c68542d3b8e75,
         type: 3}
       propertyPath: m_LocalPosition.x
