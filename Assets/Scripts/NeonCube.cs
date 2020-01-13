@@ -41,6 +41,9 @@ public class NeonCube : MonoBehaviour
     public bool skinned;
 
 
+    private AudioSource audioSource;
+
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -65,6 +68,8 @@ public class NeonCube : MonoBehaviour
         randomPosVariation[2] = Random.Range(-0.3f,0.3f);
 
         myLed = transform.Find("Led");
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     private IEnumerator WaitAndPrint(float waitTime)
@@ -158,6 +163,7 @@ public class NeonCube : MonoBehaviour
         if (domesticated && domesticatedTouched) {
 
             Color lerpedColor = Color.Lerp(domesticatedColor, neonColor, Mathf.PingPong(Time.time * 1f, 1f));
+            
 
             if (!skinned) 
 
@@ -183,10 +189,15 @@ public class NeonCube : MonoBehaviour
     public void SwitchMaterial () {
 
         if (activated) {
+            if (audioSource && !canBeDraggable) { audioSource.Play(); }
+            
             if (!skinned)
                 meshRenderer.material = neonMaterial;
             else
                 sMeshRenderer.material = neonMaterial;
+        }
+        else {
+            if (audioSource) { audioSource.Stop(); }
         }
         /*
         else if (domesticated) {

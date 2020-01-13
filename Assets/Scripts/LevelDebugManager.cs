@@ -34,7 +34,8 @@ public class LevelDebugManager : MonoBehaviour
 
         }
 
-        SceneManager.LoadSceneAsync(levelIndex);
+        StartCoroutine(FadeAudio(levelIndex));
+
     }
 
     public void Death () {
@@ -46,7 +47,24 @@ public class LevelDebugManager : MonoBehaviour
                 objs[0].transform.GetComponent<DontDestroy>().InstantiateNewStuff(inRestartNewPrefab, inRestartNewPrefabPosition, lastCheckpoint);
             }
         }
+        StartCoroutine(FadeAudio(SceneManager.GetActiveScene().buildIndex));
+        
+    }
 
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+
+    IEnumerator FadeAudio(int levelIndex) {
+ 
+        float delay = 1f;
+        float elapsedTime = 0;
+        float currentVolume = AudioListener.volume;
+ 
+        while(elapsedTime < delay) {
+            elapsedTime += Time.deltaTime*2.5f;
+            AudioListener.volume = Mathf.Lerp(currentVolume, 0, elapsedTime / delay);
+            yield return null;
+        }
+
+        SceneManager.LoadSceneAsync(levelIndex);
+ 
     }
 }

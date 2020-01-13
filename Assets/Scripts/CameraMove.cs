@@ -21,6 +21,9 @@ public class CameraMove : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         target = GameObject.Find("CameraTarget").transform;
 
+        StartCoroutine(FadeAudio());
+        
+
     }
 
     // Update is called once per frame
@@ -42,5 +45,21 @@ public class CameraMove : MonoBehaviour
         }
           
     
+    }
+
+
+    IEnumerator FadeAudio() {
+ 
+        float delay = 1f;
+        float elapsedTime = 0;
+        float currentVolume = 0;
+ 
+        while(elapsedTime < delay) {
+            elapsedTime += Time.deltaTime;
+            AudioListener.volume = Mathf.Lerp(currentVolume, 1, elapsedTime / delay);
+            Debug.Log(AudioListener.volume);
+            yield return null;
+        }
+ 
     }
 }
