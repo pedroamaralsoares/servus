@@ -6,8 +6,7 @@ public class ControlPanelLift : MonoBehaviour
 {
 
     public Transform Lift;
-    public float newHeight;
-    public float Speed = 0.1f;
+    public GameObject[] npcs;
 
     public SceneryManager sceneryManager;
     public AudioClip sceneryClip;
@@ -45,24 +44,26 @@ public class ControlPanelLift : MonoBehaviour
             if (panelsTime > timeLimit)
             {
                 playing = false;
-            }
-
-            GameObject mod = GameObject.Find("Modifiable");
-            mod.transform.parent = Lift;
-            float step = Speed * Time.deltaTime;
-            Lift.position = Vector3.MoveTowards(Lift.position, new Vector3(Lift.position.x, newHeight, Lift.position.z), step);
-
-            if (Mathf.Approximately(Lift.position.y, newHeight))
-            {
-                playing = false;
+                panelUsed = false;
                 panelsTime = 0;
-                mod.transform.parent = null;
             }
+
+            Lift.gameObject.GetComponent<Lift>().canMove = true;
+
+            foreach (GameObject npc in npcs)
+                {
+                    npc.GetComponentInChildren<Animator>().SetBool("Running", true);
+                }
         }
 
         else
         {
             meshRenderer.material = startMaterial;
+            foreach (GameObject npc in npcs)
+            {
+                npc.GetComponentInChildren<Animator>().SetBool("Running", false);
+            }
+            Lift.gameObject.GetComponent<Lift>().canMove = false;
         }
     }
 
